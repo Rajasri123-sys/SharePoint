@@ -129,4 +129,26 @@ Change site permissions for individuals:
 To change the permission level for an individual or group, selectthe down arrow next to the SharePoint permission level for that person or group and select Full control to add them to the Site owners group, or select Read to add them to the Site visitors group.
 
 Note: If a member is removed who was part of a Microsoft 365 group, but was also added using Share site only, they will still retain their permissions as an individual.
+Note: Depending on settings set by your administrator, you may have different default settings. For example, this button could say People in <Your Organization> can edit.
 
+Anyone - gives access to anyone who receives this link, whether you send it directly or someone forwards it. This can include people outside your organization. We recommend avoiding this option unless absolutely necessary.
+People in <Your Organization> with the link - gives anyone in your organization who has the link access to the file, whether they receive it directly from you or forwarded from someone else.
+People with existing access - can be used by people who already have access to the document or folder. It does not change any permissions and it doesn't share the link. Use this if you just want to send a link to somebody who already has access. 
+People you choose - gives access only to the people you specify, although other people may already have access. If people forward the sharing invitation, only people who already have access to the item will be able to use the link.
+Note: To track access and ensure security, you can only share with someone who is in your organization or has a Microsoft Account.
+
+Can edit lets people who are signed in with a Microsoft Account edit the files or folders they have access to. If you're sharing a folder, people with Edit permissions can copy, move, edit, rename, share, and delete anything in the folder they have access to.
+Notes: Can edit is turned on by default.Some links have limited options and are only anonymous links.
+
+Can review limits people to leaving comments and making suggestions on the file.
+Notes: Only Word documents have this permission option.If someone already has editing permissions for the document, selecting Can review won't prevent them from making edits. For them, the document will open in edit mode.
+
+Can view means that people can view, copy, or download your items without signing in. They can also forward the link to other people. However, they cannot make changes to the version on your SharePoint. 
+
+Can't download prevents people from downloading the files or folders they have access to. 
+
+Set expiration date lets you set a date for the link to expire. After the date you set, the link won't work anymore and you will need to create a new link for users requiring access to your file or folder. Set expiration date is only on anonymous links.
+Note: Set expiration date is only available if it is an anyone link.
+
+Set password lets you set a password to access the file. When a user clicks the link, they will be prompted to enter a password before they can access the file. You'll need to provide this password separately to anyone you want to share the file with. Set password date is only on anonymous links.
+Note:  Set password date is only available if it is an anyone link.​​​​​​​
