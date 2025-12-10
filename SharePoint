@@ -1,1 +1,69 @@
+What's in a SharePoint site
+Organizations use SharePoint to create websites. In Microsoft 365, you can create a site from the SharePoint start page. You also get a SharePoint team site whenever you create a Microsoft 365 group in Outlook Online or Microsoft 365. If you're in SharePoint Server, you can create a team or a number of other types of sites. You can use the sites as a secure place to store, organize, share, and access information from any device. All you need is a web browser, such as Microsoft Edge, Internet Explorer, Google Chrome, or Mozilla Firefox.
+
+Add a list or library to your team site:
+To add a list or library to SharePoint in Microsoft 365, select + New from within a site, and then pick List or Library from the list.
+
+Team sites
+Modern team sites are more collaborative than ever. They use Microsoft 365 Groups for a simpler permissions model. Team sites also come pre-populated with modern news, quick links, and and site activity.
+
+Microsoft 365 Groups
+One of the biggest differences between classic and modern team sites is that modern teams sites are connected to Microsoft 365 groups. Groups let you choose a set of people that you wish to collaborate with and easily set up a collection of resources for those people to share; resources like a shared Outlook inbox, shared calendar or a document library for collaborating on files. You don’t have to worry about manually assigning permissions to all those resources because adding members to the group automatically gives them the permissions they need to the tools your group provides. Microsoft 365 Groups are different from SharePoint groups in that they span across multiple Microsoft 365 resources, are more flexible, and are easier to work with.
+
+Communication sites
+A communication site is a great place to communicate information out to others. You can share news, reports, statuses, and other information in a visually compelling format. The purpose of a communication site is similar to the purpose of classic publishing sites, but there are many differences.
+
+Pages and web parts
+Modern pages provide a fast, easy way to build responsive pages using the functionality of modern web parts. Pages are similar to classic web part pages and publishing pages, but are less structured and easier to create. To learn more about modern pages, see Add a page to a site. If you are not able to create a modern page, your administrator may have turned off the ability to do so.
+
+Hub sites
+Hub sites are a great way to tie several sites together using the same branding and navigation. Unlike site collections, hub sites have a flat, rather than hierarchical, structure. This allows them to be more flexible than classic site collections.
+
+Differences between hub sites and site collections
+Site collections are hierarchical and highly structured. Hub sites have a flat structure, and are more flexible in terms of adding and removing sites from the hub. Unlike site collections, sites associated with a hub site can automatically adopt the same branding and theme as the hub site. Associated sites also get common navigation and users can search across all associated sites.
+
+Microsoft Power Automate
+SharePoint workflows and Microsoft Power Automate are both designed to automate business processes, like routing documents for approval. With Microsoft Power Automate, it's easier than before to automate processes without extensive developer resources. To learn about Power Automate, see the Microsoft Power Automate documentation.
+
+Differences between Microsoft Power Automate and SharePoint workflow
+Microsoft Power Automate is integrated into the SharePoint lists and library modern experience by default. Just select Power Automate in the toolbar of your list or library. SharePoint workflow, on the other hand, is created in SharePoint Designer or Visual Studio.
+Power Automate allows for integration across Microsoft 365, including Outlook, Microsoft Teams and more. You can also automate actions with third-party services like DropBox and Twitter.
+
+Search
+Modern search is personal and the results you see are different from what other people see, even when you search for the same words. 
+
+List
+A list is a collection of data that you can share with your team members and people who you've provided access to. You'll find a number of ready-to-use list templates to provide a good starting point for organizing list items.
+
+Create a list
+You can create a new list directly from the Lists app in Microsoft 365 by selecting +New list. (To get to the Lists app, at the top of any page, select the Microsoft 365 app launcher  App launcher button, select More apps, and then select Lists.) 
+
+What is a document library?
+A document library provides a secure place to store files where you and your co-workers can find them easily, work on them together, and access them from any device at any time. For example, you can use a document library on a site in SharePoint to store all files related to a specific project or a specific client. Adding files or moving files between folders is as easy as dragging and dropping them from one location to another.
+The default site in SharePoint and SharePoint Server 2019 includes a document library and one is created automatically when you create a new site.
+
+Plan Category	Microsoft 365 Business (Basic, Standard, Premium) Teams Essentials, (MSA & Microsoft Entra ID)6	Microsoft 365 Enterprise (E3, E5, A3, A5, G3, G5)	Office 365 (E1, E3, E5, A1, A3, A5, G1, G3, G5)	Microsoft 365 F1/F3, Office 365 F3	SharePoint Plan 1 or 2
+Included in Microsoft 365/Office 365	Yes	Yes	Yes	Yes	No
+Standalone Option	No	No	No	No	Yes
+Total storage per organization1,2,4,7,8	1 TB + 10GB per license purchased3	1 TB + 10GB per license purchased3	1 TB + 10GB per license purchased3	1TB3	1 TB + 10GB per license purchased3
+Max storage per site (site collection)	25 TB	25 TB	25 TB	25 TB	25 TB
+Sites (site collection) per organization	2 million5	2 million5	2 million5	2 million5	2 million5
+Number of licensed users	Up to 300
+Designed for SMB	1-500,0005
+Enterprise-grade features	1-500,0005
+Legacy plans	1-500,0005
+Frontline workers	1-500,0005
+Standalone SharePoint Online plans
+Extra storage	1 GB3
+Increments per tenant	1GB3	1GB3	1GB3	1GB3
+
+View the total and available storage space for your organization
+Go to Active sites in the SharePoint admin center, and sign in with an account that has admin permissions for your organization.
+In the upper right of the page, see the amount of storage available and the total storage for your subscription. (If your organization has configured Multi-Geo in Microsoft 365, you can point to the bar to see the amount of storage used in the current geo location and all other geo locations.)
+Note: The maximum value you can enter is 25600 GB, although this may be more space than your organization has.
+
+Lists and libraries
+2,000 lists and libraries combined per site collection.
+Subsites
+2,000 per site (site collection). We recommend creating sites and organizing them into hubs instead of creating subsites. If you do use subsites, we recommend limiting their number (especially on heavily trafficked sites). In addition, all navigation types (site, hub, global, and footer) are limited to 500 child links at each level. Extra nodes added after the limit has been reached will receive an error.
 
