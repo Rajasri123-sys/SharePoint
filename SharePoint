@@ -67,3 +67,13 @@ Lists and libraries
 Subsites
 2,000 per site (site collection). We recommend creating sites and organizing them into hubs instead of creating subsites. If you do use subsites, we recommend limiting their number (especially on heavily trafficked sites). In addition, all navigation types (site, hub, global, and footer) are limited to 500 child links at each level. Extra nodes added after the limit has been reached will receive an error.
 
+Note: Your organization is limited to 2,000 hub sites. You might not need a hub site for every function and it's important to do some planning before you create hubs.
+Users
+2 million per site collection.
+ Note: There's no distinct limit to the number of guests you can invite to SharePoint sites.
+
+SharePoint groups
+A user can belong to 5,000 groups per site (site collection), and each group can have up to 5,000 users. You can have up to 10,000 groups per site (site collection).
+
+Versions
+50,000 major versions and 511 minor versions.
