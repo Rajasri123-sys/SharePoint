@@ -3462,16 +3462,10 @@ Item Updated
 
 Item Deleted
 
-
-
----
-
 ✔ 52.1 Register Webhook
 
 POST /_api/web/lists/getByTitle('Employees')/subscriptions
 
-
----
 
 ✔ Required Fields:
 
@@ -3484,18 +3478,9 @@ clientState
 
 Webhook will call your API endpoint.
 
-
----
-
-
----
-
 🧩 CHAPTER 53 – SHAREPOINT LIST FORM CUSTOMIZATION
 
 There are 3 ways:
-
-
----
 
 ✔ 1. PowerApps Custom Forms
 
@@ -3528,25 +3513,13 @@ Example:
   }
 }
 
-
----
-
 ✔ 3. SPFx List Form Customizer
 
 Used for:
 
 Multi-step forms
-
 Validations
-
 Integrations
-
-
-
----
-
-
----
 
 🧩 CHAPTER 54 – MICROSOFT GRAPH PERMISSIONS MODEL
 
@@ -3564,37 +3537,18 @@ Sites.ReadWrite.All
 User.Read.All  
 Group.ReadWrite.All
 
-
----
-
-
----
-
 🧩 CHAPTER 55 – MODERN SHAREPOINT CONNECTORS
-
-
----
 
 ✔ 1. Power Automate + SharePoint
 
 Triggers:
-
 When an item is created
-
 When a file is added
-
 Recurrence workflows
-
-
-
----
 
 ✔ 2. PowerApps + SharePoint
 
 Used as a data source.
-
-
----
 
 ✔ 3. Logic Apps
 
@@ -3649,10 +3603,6 @@ Webhooks
 
 CSOM (Client-Side Object Model)
 
-
-
----
-
 7.1 SharePoint Framework (SPFx)
 
 SPFx is the official development model for SharePoint Online.
@@ -3700,24 +3650,12 @@ package.json	Lists npm packages
 gulpfile.js	Build commands
 serve.json	Local testing config
 manifest.json	Web part metadata
-
-
-
----
-
 7.3 SPFx Web Parts
 
 Types
-
 1. React Web Parts → most used
-
-
 2. Non-React Web Parts → simple JS
-
-
 3. Adaptive Card Extensions (ACEs) → Viva Connections
-
-
 
 Capabilities
 
@@ -3730,10 +3668,6 @@ Fetch data using REST or Graph
 Create Tiles, Charts, Cards
 
 Provide customization options (Property Pane)
-
-
-
----
 
 7.4 SPFx Extensions
 
@@ -3759,10 +3693,6 @@ Add custom buttons to list toolbars
 
 Example: “Approve”, “Reject”, “Send Email”
 
-
-
----
-
 7.5 SPFx Property Pane Controls
 
 Common property controls:
@@ -3775,31 +3705,17 @@ Toggle	On/Off
 Slider	Numeric values
 Checkbox	Multi-select
 
-
-
----
-
 7.6 SPFx Deployment
 
 Deployment Steps
-
 1. Build
-
 gulp build
 gulp bundle --ship
 
-
 2. Package
-
 gulp package-solution --ship
-
-
 3. Upload .sppkg to App Catalog
-
-
 4. Deploy to sites
-
-
 5. Add to pages
 
 7.7 SharePoint REST API
@@ -3817,10 +3733,6 @@ Get items	/web/lists/getByTitle('List')/items
 Create item	POST → /items
 Update item	MERGE → /items(id)
 
-
-
----
-
 7.8 Microsoft Graph API (for SharePoint)
 
 Graph is the universal API for Microsoft 365.
@@ -3834,10 +3746,6 @@ Get drive	/drives/{drive-id}
 Upload file	/drive/root:/path/file
 List DriveItems	/drive/root/children
 
-
-
----
-
 7.9 PnP JS Library
 
 A wrapper for REST API to reduce code.
@@ -3847,9 +3755,6 @@ Example:
 import { sp } from "@pnp/sp";
 
 sp.web.lists.getByTitle("Tasks").items.get();
-
-
----
 
 7.10 PnP PowerShell (Advanced Admin + Dev)
 
@@ -3868,9 +3773,6 @@ Example:
 
 Connect-PnPOnline -Url https://tenant.sharepoint.com
 Get-PnPSite
-
-
----
 
 7.11 SharePoint Webhooks
 
@@ -3916,9 +3818,6 @@ Azure AD App Registration
 Graph API
 
 
-
----
-
 7.13 SharePoint Branding & UI Development
 
 Branding Options:
@@ -3931,10 +3830,6 @@ List Forms	PowerApps
 Page Layouts	SPFx / Site Templates
 Web Part Design	React components
 
-
-
----
-
 7.14 SharePoint List Form Customization
 
 Methods:
@@ -3945,10 +3840,6 @@ JSON column formatting	UI custom icons, badges
 JSON list formatting	Custom layout
 PowerApps form	Advanced business forms
 SPFx form	Fully custom forms
-
-
-
----
 
 7.15 SharePoint Automation
 
@@ -3975,10 +3866,6 @@ Move files automatically
 
 Integrate external systems
 
-
-
----
-
 7.16 SharePoint Security & Permissions for Devs
 
 Concepts:
@@ -4004,9 +3891,6 @@ AadHttpClient (SPFx)
 
 Azure AD App Registration
 
-
-
----
 
 7.17 SharePoint Search & Enterprise Search Development
 
@@ -4146,24 +4030,13 @@ SharePoint Administration includes managing:
 ✔ SPFx deployment
 
 Admins manage everything using:
-
 SharePoint Admin Center
-
 Microsoft 365 Admin Center
-
 Security & Compliance Center
-
 Teams Admin Center
-
 Azure AD (Entra ID)
-
 OneDrive Admin Center
-
 PowerShell (PnP + SPO PowerShell)
-
-
-
----
 
 8.2 SharePoint Admin Center Overview
 
@@ -4172,35 +4045,15 @@ The modern SharePoint Admin Center includes:
 📌 Key Sections:
 
 1. Active sites
-
-
 2. Content services
-
-
 3. Sharing settings
-
-
 4. Access control
-
-
 5. Settings
-
-
 6. Migration manager
-
-
 7. Site creation
-
-
 8. Term store
-
-
 9. Policy settings
 
-
-
-
----
 
 8.3 SharePoint Active Sites Management
 
@@ -4230,10 +4083,6 @@ Multi-Geo Sites (region-based storage)
 
 Private Channel Sites (Teams)
 
-
-
----
-
 8.4 OneDrive Admin Overview
 
 OneDrive admin applies to each user:
@@ -4252,9 +4101,6 @@ Access to terminated users’ files
 
 Access delegation
 
-
-
----
 
 8.5 Sharing Settings (Tenant-Level)
 
@@ -4354,8 +4200,6 @@ Draft visibility
 
 Auto-save
 
-
-
 Check-in/out:
 
 Used for:
@@ -4376,13 +4220,9 @@ Retention can:
 ✔ Apply to:
 
 SharePoint sites
-
 OneDrive
-
 Teams
-
 Exchange
-
 
 Types:
 
@@ -4395,33 +4235,18 @@ Record label	Content becomes read-only
 8.10 Sensitivity Labels (Security)
 
 Used for:
-
 Classifying confidential content
-
 Encrypting files
-
 Blocking sharing
-
 Restricting download
-
 Watermarking
 
-
 Used with:
-
 SharePoint
-
 OneDrive
-
 Office apps
-
 Teams
-
 Email
-
-
-
----
 
 8.11 Permissions & Access Management (MOST IMPORTANT)
 
@@ -4439,26 +4264,16 @@ Limited Access	Required for hierarchy
 Permission Hierarchy:
 
 1. Site Collection Admin
-
-
 2. Site Owner
-
-
 3. Members (Edit)
-
-
 4. Visitors (Read)
 
 
 
 SharePoint Groups:
-
 Owners
-
 Members
-
 Visitors
-
 Custom groups
 
 
@@ -4470,9 +4285,6 @@ Permission Best Practices:
 ✔ Use “Access Request” feature
 ✔ Use “Share” carefully
 ✔ Apply labels or DLP for confidential docs
-
-
----
 
 8.12 Site Design & Site Scripts (Automation)
 
@@ -4490,9 +4302,6 @@ Running Power Automate flows automatically
 
 
 Used for automated provisioning.
-
-
----
 
 8.13 Term Store (Managed Metadata)
 
@@ -4539,10 +4348,6 @@ PnP Modern Search web parts
 
 Hybrid search (on-prem + cloud)
 
-
-
----
-
 8.15 Migration Tools
 
 Supported tools:
@@ -4563,7 +4368,6 @@ Supported tools:
 
 
 6. Metalogix
-
 
 
 Migration types:
@@ -4623,10 +4427,6 @@ Login activity
 
 Admin actions
 
-
-
----
-
 8.17 Backup & Restore in SharePoint Online
 
 SharePoint Online automatically manages backup.
@@ -4652,10 +4452,6 @@ Restore lists/libraries
 
 Restore site using “Site Restore” (last 30 days)
 
-
-
----
-
 8.18 Hub Site Administration
 
 Hub Sites allow:
@@ -4679,10 +4475,6 @@ Lock Hub association
 
 Add hub permissions
 
-
-
----
-
 8.19 Multi-Geo SharePoint
 
 Used by global organizations.
@@ -4697,9 +4489,6 @@ Users get closest data center
 
 Regional site creation
 
-
-
----
 
 8.20 External Sharing Administration
 
@@ -4731,9 +4520,6 @@ Link expiration
 
 Password protection
 
-
-
----
 
 8.21 Content Services in Admin Center
 
@@ -4775,8 +4561,6 @@ Actions DLP can take: ✔ Block sharing
 ✔ Report incident
 
 
----
-
 8.23 Automation with PowerShell
 
 There are two PowerShell modules:
@@ -4814,9 +4598,6 @@ Example:
 Connect-PnPOnline -Url <site>
 Get-PnPList
 
-
----
-
 8.24 Governance & Best Practices (Most Asked in Interviews)
 
 Admin Best Practices:
@@ -4833,9 +4614,6 @@ Admin Best Practices:
 ✔ Use naming conventions
 ✔ Use site creation policies
 ✔ Monitor usage regularly
-
-
----
 
 8.25 Real-Time Admin Scenarios
 
@@ -4876,10 +4654,6 @@ Move sites
 Archive old content
 
 Apply retention
-
-
-
----
 
 Scenario 4: Sensitive files leaked
 
@@ -4934,9 +4708,6 @@ PowerApps supports:
 ✔ Attachments
 ✔ Delegation
 
-
----
-
 9.3 Creating SharePoint Lists for Apps
 
 Common real-time structures:
@@ -4974,9 +4745,6 @@ Logs
 3. Lookups
 
 Used for dropdown values.
-
-
----
 
 9.4 PowerApps Form Customization (MOST COMMON USE CASE)
 
@@ -5024,10 +4792,6 @@ Validation	Required, mandatory rules
 Conditional logic	Show/hide based on user
 Patch for save	Full control
 
-
-
----
-
 9.5 PowerApps Delegation with SharePoint
 
 Delegation = Large data handling.
@@ -5063,10 +4827,6 @@ StartsWith instead of Search/Contains
 Filter instead of ForAll
 
 Indexing columns
-
-
-
----
 
 9.6 PowerApps Forms + SharePoint Columns
 
@@ -5138,9 +4898,6 @@ Disable multiple attachments using:
 
 MaxAttachments = 1
 
-
----
-
 9.9 PowerApps Galleries with SharePoint
 
 Used to show:
@@ -5164,9 +4921,6 @@ Items = SortByColumns(Requests, "Created", Descending)
 
 Items = StartsWith(Title, txtSearch.Text)
 
-
----
-
 9.10 Offline Mode with SharePoint
 
 PowerApps supports offline with:
@@ -5174,9 +4928,6 @@ PowerApps supports offline with:
 👉 Local device storage
 
 But offline editing syncs only when user goes online again.
-
-
----
 
 9.11 SharePoint + Power Automate Integration
 
@@ -5259,9 +5010,6 @@ Add date + username automatically.
 
 Extract info from file name.
 
-
----
-
 9.14 PowerApps + SharePoint + Power Automate Combined Scenarios
 
 Scenario 1: Ticketing System
@@ -5295,9 +5043,6 @@ SharePoint → Store data
 Flow → Manager approval
 Condition → Auto update leave balance
 
-
----
-
 Scenario 3: Document Approval Workflow
 
 Users upload document
@@ -5305,17 +5050,11 @@ Flow sends approval request
 Manager approves
 Flow moves document to “Approved Documents” library
 
-
----
-
 Scenario 4: Visit Logs System
 
 PowerApps: record visits
 SharePoint: stores logs
 Flow: sends daily summary email
-
-
----
 
 9.15 Security & Permissions in Integrated Apps
 
@@ -5408,10 +5147,6 @@ Cause: Data type mismatch
 Solution:
 
 Check lookup / choice fields
-
-
-
----
 
 9.19 Real-Time End-to-End Project Example (Advanced)
 
@@ -5512,10 +5247,6 @@ Permission: Access level (Read, Edit, Full Control)
 
 Group: Collection of users with assigned permissions
 
-
-
----
-
 10.2 Intermediate Questions
 
 Q11. What is a Hub Site?
@@ -5563,9 +5294,6 @@ Automated sequence of actions triggered by an event, e.g., approval, notificatio
 Q20. What is Power Automate integration?
 
 Use Power Automate to trigger workflows based on SharePoint events (item created, modified, deleted).
-
-
----
 
 10.3 Advanced Questions
 
@@ -5659,7 +5387,6 @@ Q31. How do you create a SPFx Web Part?
 5. Build & deploy .sppkg
 
 
-
 Q32. Difference between SPFx Extension types
 
 Application Customizer → Inject header/footer/scripts
@@ -5736,10 +5463,6 @@ Purpose	Security / protection	Compliance / retention
 Action	Encryption, restrict sharing	Keep / delete after X time
 Applies To	SharePoint, OneDrive, Teams	SharePoint, OneDrive, Exchange
 
-
-
----
-
 10.6 PowerApps + SharePoint + Flow Questions
 
 Q41. How to customize SharePoint list form in PowerApps?
@@ -5775,10 +5498,6 @@ Q45. How to send daily reports from SharePoint?
 Create Flow → Trigger: Recurrence
 
 Action: Get items → Compose email → Send to users
-
-
-
----
 
 10.7 Real-Time Scenario Questions
 
@@ -5821,10 +5540,6 @@ Connect to multiple lists via Collections
 Q50. How to automate document move based on metadata?
 
 Power Automate → Trigger: When file created/modified → Condition: Metadata → Action: Move/Copy
-
-
-
----
 
 10.8 SPFx + Developer Scenario Questions
 
@@ -5959,10 +5674,6 @@ Classic: Legacy, server-side code
 
 Modern: Responsive, mobile-friendly, client-side code, SPFx
 
-
-
----
-
 Part B – Intermediate Concepts
 
 16. What are Views in SharePoint Lists?
@@ -6007,9 +5718,6 @@ Keeps or deletes content automatically for compliance purposes.
 25. What is a Sensitivity Label?
 
 Classifies content for security, encryption, and external sharing control.
-
-
----
 
 Part C – Admin & Governance
 
@@ -6163,10 +5871,6 @@ Store data in Collections
 
 Sync back when online
 
-
-
----
-
 Part E – Power Automate + SharePoint
 
 41. Common Triggers
@@ -6223,10 +5927,6 @@ Check connectors and permissions
 Validate data types
 
 Check run history and error messages
-
-
-
----
 
 Part F – SPFx & Developer
 
@@ -6354,10 +6054,6 @@ Approval flow for IT and facilities
 
 Dashboard for HR
 
-
-
----
-
 11.2 Leave Management System
 
 Objective: Allow employees to apply for leave and managers to approve/decline.
@@ -6452,10 +6148,6 @@ Dashboard for managers
 
 Status updates and history tracking
 
-
-
----
-
 11.6 Asset Management System
 
 Objective: Track company assets (hardware, software).
@@ -6467,7 +6159,6 @@ SharePoint Lists: Assets, Assignments, Status
 PowerApps: Assign/release assets
 
 Power Automate: Notify when asset is due for maintenance
-
 
 Key Features:
 
