@@ -158,3 +158,1881 @@ Existing collaboration sites cannot be converted to "modern" team sites with an 
 "Modern" lists and library usage can be controlled at site, web, and list/library level. You can find more details about the available options in our "modern" list and libraries article.
 By default, "classic" SharePoint sites use modern pages for any newly added page, and you have the option to change the welcome page to a modern page. Setting a new "modern" page for a "classic" SharePoint site can be done programmatically by using CSOM or REST APIs.
 
+
+Below is Part-1 of the COMPLETE SharePoint Handbook written in simple, detailed, beginner-to-advanced style.
+The full handbook will be very long (like a full training book), so I will send it in well-organized parts.
+When you finish reading this part, tell me “Part 2”, and I will continue the next chapter.
+
+
+---
+
+📘
+
+Part 1 – Introduction, Architecture, Core Concepts, and Foundations
+
+
+---
+
+CHAPTER 1 – What is SharePoint? (Complete Explanation)
+
+SharePoint is Microsoft’s platform used for:
+
+Document Management
+
+Intranet Sites
+
+Team collaboration
+
+Business automation
+
+Secure file storage
+
+Content sharing
+
+Workflow solutions
+
+Enterprise search
+
+Integration with Microsoft 365 (Teams, OneDrive, PowerApps, Power Automate)
+
+
+Where SharePoint is used?
+
+Business Need	How SharePoint Helps
+
+Document storage	Libraries, versioning, metadata
+Sharing & collaboration	Real-time co-authoring
+Secure information	Permissions, policies
+Automation	Power Automate Workflows
+Websites/Intranets	Modern/Classic sites
+Knowledge management	Pages, hubs, search center
+Integration	M365, Teams, Power Platform
+
+
+
+---
+
+CHAPTER 2 – Evolution of SharePoint (History)
+
+1990s
+
+Started as a web-based document management system.
+
+
+2001 – SharePoint Portal Server
+
+First official release.
+
+
+2007 – SharePoint MOSS
+
+Big jump with workflows, metadata, enterprise search.
+
+
+2010 – SharePoint Server 2010
+
+Sandbox solutions, BCS, improved UI.
+
+
+2013 – SharePoint Server 2013
+
+Modern apps, cloud-first direction.
+
+
+2016 – Hybrid SharePoint
+
+Integration with Microsoft 365.
+
+
+2019 – Last On-Prem Modern Version
+
+Modern UI, hybrid support.
+
+
+SharePoint Online – Continuous Updates
+
+Cloud-based, auto-updated, part of Microsoft 365.
+
+
+
+---
+
+CHAPTER 3 – SharePoint Online Architecture (Complete Breakdown)
+
+SharePoint Online is built on Multi-tenant cloud architecture.
+
+Layers of Architecture:
+
+1. Tenant Level
+
+Your Microsoft 365 subscription
+
+Contains all SharePoint sites
+
+Managed by Global Admin & SharePoint Admin
+
+
+
+2. Site Collections (Sites)
+
+Every team site/communication site is a site collection.
+
+Root site (https://tenant.sharepoint.com/)
+
+
+
+3. Sites & Subsites
+
+Modern approach: avoid subsites, use independent sites connected via Hub sites.
+
+
+
+4. Lists & Libraries
+
+Stores structured information
+
+Document libraries: files
+
+Lists: data tables (similar to Excel)
+
+
+
+5. Pages
+
+Content pages built with web parts
+
+
+
+6. Web Parts
+
+UI building blocks: Hero, List, Document Library, Embed, Image, etc.
+
+
+
+7. Storage
+
+Comes from OneDrive + SharePoint pooled storage
+
+Auto-expanding storage in Microsoft 365 plans
+
+
+
+
+
+---
+
+CHAPTER 4 – Types of SharePoint Sites
+
+1️⃣ Team Site
+
+Used by departments, teams, project groups
+
+Connected to Microsoft 365 Group
+
+Auto-created:
+
+Shared mailbox
+
+Planner
+
+Calendar
+
+OneNote
+
+
+Best for: collaboration
+
+
+2️⃣ Communication Site
+
+Used for announcements or company-wide communications
+
+No Office 365 Group
+
+Highly visual pages
+
+Best for: intranet, landing pages, dashboards
+
+
+3️⃣ Hub Sites
+
+Connect multiple related sites
+
+Shared theme, navigation, branding
+
+Search across hub
+
+
+4️⃣ Project/Department Sites
+
+Specialized team sites
+
+Custom lists & automation
+
+
+5️⃣ Classic Sites (Legacy)
+
+Old UI (2010/2013 style)
+
+Used for backward compatibility only
+
+
+
+---
+
+CHAPTER 5 – Authentication, Authorization & Permissions
+
+Authentication
+
+Verifying who you are:
+
+Azure AD
+
+MFA
+
+SSO
+
+Conditional Access
+
+
+Authorization
+
+Verifying what you can access:
+
+Permissions levels
+
+Group memberships
+
+
+
+---
+
+Permission Levels (Full Table)
+
+Level	Meaning
+
+Full Control	Owner: all actions
+Edit	Add, edit, delete items
+Contribute	Add, edit items (cannot delete your site)
+Read	Read-only
+View Only	Can see pages but not download files
+Limited Access	Auto-assigned behind the scenes
+
+
+
+---
+
+SharePoint Groups
+
+Every site has 3 built-in groups:
+
+1. Owners → Full Control
+
+
+2. Members → Edit
+
+
+3. Visitors → Read
+
+
+
+
+---
+
+Sharing Modes
+
+SharePoint supports:
+
+People with link (anonymous)
+
+Specific people
+
+Existing access
+
+People in your organization
+
+
+Admin can disable or restrict these at:
+
+SharePoint Admin Center → Policies → Sharing
+
+
+---
+
+CHAPTER 6 – Lists (Detailed Beginner → Advanced)
+
+Lists are like advanced Excel tables.
+
+Types of Lists
+
+Custom list
+
+Issue tracking list
+
+Tasks list
+
+Calendar list
+
+Contacts list
+
+
+Columns
+
+Text
+
+Choice
+
+Number
+
+Yes/No
+
+Lookup
+
+Person
+
+Hyperlink
+
+Calculated
+
+Date & Time
+
+Managed Metadata (Term Store)
+
+
+List Features
+
+Filters & Views
+
+JSON formatting
+
+PowerApps Form customization
+
+Automation (Power Automate)
+
+Versioning & auditing
+
+
+
+---
+
+CHAPTER 7 – Document Libraries
+
+Document libraries store files with advanced metadata.
+
+Key Features
+
+Version history
+
+Check-in/Check-out
+
+Major/Minor versions
+
+Metadata tagging
+
+Custom views
+
+PowerApps & Flow integration
+
+File sharing
+
+Sync with OneDrive
+
+Required metadata
+
+
+Advanced Library Features
+
+Content types
+
+IRM (Information Rights Management)
+
+Policies & retention
+
+Sensitivity labels
+
+Approval workflows
+
+
+
+---
+
+CHAPTER 8 – Site Pages & Web Parts
+
+Types of Pages
+
+Modern pages (recommended)
+
+Classic pages
+
+Home pages
+
+News posts
+
+
+Popular Web Parts
+
+Hero
+
+Quick Links
+
+Lists
+
+Document Library
+
+Events
+
+People
+
+Highlighted content
+
+Embed
+
+Image Gallery
+
+Power BI
+
+Stream video
+
+Countdown timer
+
+
+
+---
+
+CHAPTER 9 – OneDrive vs SharePoint (Clear Explanation)
+
+Feature	OneDrive	SharePoint
+
+Personal storage	✔	✖
+Team storage	✖	✔
+Sync	✔	✔
+Sharing	✔	✔
+Intranet	✖	✔
+Lists	✖	✔
+Web parts & pages	✖	✔
+
+
+Rule:
+
+Personal files → OneDrive
+
+Team/project files → SharePoint Team Sites
+
+Organization-wide content → Communication Sites
+
+
+
+---
+
+CHAPTER 10 – Integration with Power Platform
+
+SharePoint integrates with:
+
+PowerApps
+
+Build custom forms
+
+Build standalone apps using SharePoint lists
+
+
+Power Automate
+
+Document approval
+
+Alerts
+
+File movement
+
+Custom workflows
+
+Scheduled processes
+
+
+Power BI
+
+Connect list data
+
+Build dashboards in intranet
+
+
+
+Below is THE COMPLETE SHAREPOINT HANDBOOK – PART 2
+Everything is explained in deep, detailed, admin-level clarity.
+This part focuses on Administration, Governance, Security, Compliance, Migration, Site Architecture, Term Store, Search & more.
+
+
+---
+
+📘
+
+Part 2 – SharePoint Administration, Security, Governance & Advanced Features
+
+
+---
+
+CHAPTER 11 – SharePoint Admin Center (Full Breakdown)
+
+The SharePoint Admin Center (SPAC) is where administrators manage:
+
+Sites
+
+Storage
+
+Policies
+
+Sharing rules
+
+Access controls
+
+Migration tools
+
+Term Store
+
+Content services
+
+Search administration
+
+
+SPAC Sections
+
+1. Sites
+
+You can:
+
+Create sites (team, communication)
+
+Configure hub sites
+
+Adjust site sharing policies
+
+Change site storage limits
+
+Change admins
+
+Delete & restore sites
+
+View activity reports
+
+
+2. Active Sites Tab
+
+Shows:
+
+URL
+
+Template (Group/Team/Communication)
+
+Storage used
+
+Hub association
+
+Primary admin
+
+External sharing level
+
+
+3. Deleted Sites
+
+Recoverable for 93 days.
+
+4. Settings
+
+Admin can configure:
+
+Site creation settings
+
+Migration center
+
+Sync settings (OneDrive)
+
+Search settings
+
+Notification settings
+
+Storage limits
+
+Access control policies
+
+
+
+---
+
+CHAPTER 12 – Site Governance Strategy (Complete Guide)
+
+Governance ensures SharePoint stays:
+
+Organized
+
+Secure
+
+Scalable
+
+Maintainable
+
+
+Key Components
+
+1. Site Creation Policies
+
+Who can create sites?
+
+Should all team sites create Microsoft 365 Groups?
+
+Approval workflow required?
+
+
+
+2. Naming Convention Examples:
+
+Dept-HR-India
+
+Project-Delta-2025
+
+Team-Sales-KA
+
+
+
+3. Storage Management
+
+Auto-expanding (default)
+
+Manual limits for large organizations
+
+
+
+4. Permissions Governance
+
+Avoid individual permissions
+
+Use SharePoint groups (Owners / Members / Visitors)
+
+Avoid breaking inheritance without documentation
+
+
+
+5. Content Lifecycle
+
+Archive policies
+
+Retention rules
+
+Deletion/sensitivity labels
+
+
+
+6. Information Architecture
+
+Create hubs
+
+Use metadata, not folders
+
+Use content types
+
+
+
+7. Intranet Governance
+
+Branding
+
+Page templates
+
+Naming rules
+
+Approval process
+
+
+
+
+
+---
+
+CHAPTER 13 – Advanced Permission Management
+
+Permission Inheritance Model
+
+Hierarchy:
+
+Site → Lists/Libraries → Items → Documents
+
+By default, everything inherits from the parent.
+
+When to Break Inheritance?
+
+Need private library
+
+Confidential folder
+
+Restricted list items
+
+
+Permission Groups (Advanced)
+
+Along with Owners/Members/Visitors, you can create custom groups like:
+
+HR Sensitive Data Readers
+
+Project Delta Contributors
+
+Managers Only Group
+
+
+External Sharing Policies (Admin Center)
+
+Levels:
+
+1. Anyone (anonymous)
+
+
+2. New and existing external users
+
+
+3. Existing external users only
+
+
+4. Only internal users
+
+
+
+Admins can restrict:
+
+File/folder sharing
+
+Sharing expiration
+
+Domain allow/block list
+
+
+
+---
+
+CHAPTER 14 – SharePoint Storage Architecture
+
+Where Storage Comes From?
+
+Component	Storage Source
+
+OneDrive	1 TB/user (expandable)
+SharePoint Sites	Pooled storage (1 TB + 10 GB/user licenses)
+Teams Files	Stored in the connected team site
+
+
+Storage Features
+
+Auto-expansion
+
+Usage insights per site
+
+File size limit 250 GB
+
+Sync limits (OneDrive)
+
+
+
+---
+
+CHAPTER 15 – Managed Metadata & Term Store (Full Explanation)
+
+The Term Store is used for organization-wide metadata.
+
+Components:
+
+1. Term Groups
+
+Top-level container
+Example: HR, Marketing, Regions
+
+2. Term Sets
+
+Categories used across SharePoint
+Example:
+
+Country
+
+Project Name
+
+Department
+
+Product Category
+
+
+3. Terms
+
+Actual values
+Example: India, USA, Japan, UK
+
+4. Synonyms
+
+Alternate names for search
+
+5. Custom Sort Order
+
+Define order of dropdown values
+
+Why Term Store is Important?
+
+Standard metadata across sites
+
+Better search results
+
+Hierarchical tagging
+
+Synonyms help search accuracy
+
+
+
+---
+
+CHAPTER 16 – Content Types (Full Detailed Guide)
+
+What is a Content Type?
+
+A reusable schema for:
+
+Documents
+
+List items
+
+Metadata
+
+Workflows
+
+Templates
+
+
+Content Type Components
+
+Columns
+
+Document template
+
+Policies
+
+Workflows
+
+Retention labels
+
+
+Examples
+
+1. Invoice Content Type
+
+Invoice Number
+
+Vendor
+
+Amount
+
+PDF Template
+
+
+
+2. Project Document
+
+Project ID
+
+Phase
+
+Status
+
+
+
+
+Content Type Hub
+
+Used earlier for publishing content types across sites
+Modern SharePoint no longer requires a separate hub—content types are centrally managed in Content Type Gallery.
+
+
+---
+
+CHAPTER 17 – SharePoint Search (Complete End-to-End)
+
+SharePoint search uses:
+
+1. Microsoft Search (Modern)
+
+Unified search across Microsoft 365
+
+Context-aware (Teams, Outlook, SharePoint)
+
+Uses Graph API
+
+
+2. Classic Search (Legacy)
+
+Still used for:
+
+Custom search pages
+
+Search refiners filters
+
+Promoted results
+
+
+
+---
+
+Search Architecture (Admin Level)
+
+Index
+
+Contains:
+
+Site content
+
+Metadata
+
+Document text
+
+User profile properties
+
+Synonyms (term store)
+
+
+Crawling
+
+Not required in SharePoint Online
+Content is indexed automatically.
+
+Search Security
+
+Results differ per user based on:
+
+Permissions
+
+Group memberships
+
+
+Custom Search
+
+Use:
+
+PnP Modern Search web parts
+
+KQL (Keyword Query Language)
+
+Custom refiners
+
+Search verticals
+
+
+
+---
+
+CHAPTER 18 – Workflow Options (Old vs New)
+
+Legacy Workflow Engines
+
+Workflow	Status
+
+SharePoint Designer 2010	Deprecated
+SharePoint Designer 2013	Deprecated
+Classic workflows	Retired
+
+
+Modern Workflow: Power Automate
+
+Supports:
+
+Approvals
+
+Email notifications
+
+File operations
+
+SharePoint triggers:
+
+When item created
+
+When file updated
+
+When item deleted
+
+Scheduled workflows
+
+
+
+
+---
+
+CHAPTER 19 – SharePoint Migration (Complete Info)
+
+Migration Tools
+
+1. SharePoint Migration Tool (SPMT)
+
+Migrate on-prem content
+
+File shares
+
+SharePoint 2010/2013/2016/2019
+
+
+2. Migration Manager (Admin Center)
+
+Centralized migration
+
+Supports file shares
+
+Reports for each migration
+
+
+3. Mover.io
+
+Cloud-to-cloud migrations
+
+From Box, Dropbox, Google Drive etc.
+
+
+Best Practices
+
+Clean content before migration
+
+Avoid deep folder structure
+
+Convert folders → metadata
+
+Decide site/information architecture
+
+Check unsupported file types
+
+
+
+---
+
+CHAPTER 20 – Records Management, Compliance & Security
+
+Microsoft Purview Integration
+
+SharePoint supports enterprise-grade compliance.
+
+Key Capabilities
+
+1. Retention Labels
+
+Keep content for x years
+
+Delete after retention ends
+
+
+
+2. Retention Policies
+
+Apply org-wide rules (HR sites, Finance sites)
+
+
+
+3. Sensitivity Labels
+
+Encryption
+
+Watermarking
+
+Sharing restrictions
+
+
+
+4. DLP (Data Loss Prevention)
+
+Prevent sharing: passport number, PAN, Aadhaar, financial details
+
+
+
+5. eDiscovery
+
+Search sites for legal cases
+
+
+
+6. Audit Logs
+
+Who accessed?
+
+File downloads?
+
+Sharing activity?
+
+
+
+
+
+---
+
+CHAPTER 21 – Advanced Site Design & Templates
+
+SharePoint provides:
+
+1. Site Templates
+
+Training site
+
+Department site
+
+Project site
+
+Crisis communication
+
+Event management
+
+IT help desk
+
+
+2. Custom Templates
+
+You can save:
+
+Themes
+
+Navigation
+
+Pages
+
+Web parts
+
+Libraries
+
+
+3. Site Scripts
+
+JSON-based automation:
+
+Create lists
+
+Add content types
+
+Add navigation
+
+Configure homePage
+
+
+4. Hub Site Architecture
+
+A scalable model for large organizations:
+
+Dept hubs (HR, IT, Finance)
+
+Project hubs
+
+Regional hubs
+
+Intranet root site
+
+
+
+---
+
+CHAPTER 22 – Monitoring & Reporting
+
+Tools
+
+1. Microsoft 365 Usage Reports
+
+Active sites
+
+File activity
+
+OneDrive usage
+
+
+
+2. Admin Portal Reports
+
+File usage
+
+Site trends
+
+
+
+3. PowerShell (PnP & SPO)
+
+Report site storage
+
+External users report
+
+Permissions reports
+
+
+
+
+
+---
+
+✔️ End of Part 2
+
+
+---
+
+👉 Ready for Part 3?
+
+Part 3 will include:
+
+✔ SharePoint Development (SPFx)
+
+✔ Modern Pages Architecture
+
+✔ REST API / Graph API
+
+✔ PnP PowerShell Commands
+
+✔ Branding & Theming
+
+✔ Performance Optimization
+
+✔ Enterprise Intranet Architecture
+
+✔ Backup/Recovery in SharePoint Online
+
+✔ Integration with Teams
+
+✔ OneDrive Deep Dive
+
+✔ Governance Templates & Real-Life Scenarios
+
+
+---
+
+📘 THE COMPLETE SHAREPOINT HANDBOOK
+
+Part 3 – SharePoint Development (SPFx), APIs, Branding, Customization & Teams Integration
+
+
+---
+
+CHAPTER 23 – Introduction to SharePoint Development
+
+SharePoint development mainly includes:
+
+1. SPFx Development (SharePoint Framework)
+
+Modern way
+
+React, TypeScript, JavaScript based
+
+Used for:
+
+Web parts
+
+Extensions
+
+Custom forms
+
+Teams apps
+
+Viva Connections cards
+
+
+
+2. PnP PowerShell
+
+Automation for admin tasks
+
+Provisioning sites/lists/content types
+
+
+3. PnP JS Library
+
+JavaScript wrapper for SharePoint REST API
+
+
+4. REST API & Graph API
+
+CRUD operations on lists/libraries
+
+Access user data, files, search, groups
+
+
+5. Provisioning Templates
+
+Deploying sites with JSON templates
+
+
+
+---
+
+CHAPTER 24 – SharePoint Framework (SPFx) – Complete Breakdown
+
+SPFx is Microsoft’s modern development model for SharePoint.
+
+Why SPFx?
+
+Fully client-side
+
+Works on modern pages
+
+Runs in Teams + Viva
+
+Supports React, Vue, Angular, JS
+
+
+
+---
+
+SPFx Architecture
+
+SPFx consists of:
+
+✔ Web Parts
+
+UI components added to pages
+Examples:
+
+Tile view web part
+
+Hero slider
+
+Graph-integrated web part
+
+List dashboard web part
+
+
+✔ Extensions
+
+Used to customize behavior:
+
+1. Application Customizer → Inject header/footer
+
+
+2. Field Customizer → Customize list column UI
+
+
+3. Command Set → Add buttons to list toolbar
+
+
+
+✔ Library Components
+
+Reusable code shared between SPFx projects.
+
+
+---
+
+SPFx Project Structure
+
+When you create an SPFx project:
+
+.spfx/
+node_modules/
+config/
+src/
+  |-- webparts/
+  |-- components/
+  |-- services/
+  |-- models/
+
+Important files:
+
+package.json → dependencies
+
+.yo-rc.json → project config
+
+gulpfile.js → build tasks
+
+.manifest.json → web part metadata
+
+tsconfig.json → TypeScript config
+
+.scss → styling
+
+
+
+---
+
+CHAPTER 25 – SPFx Web Parts (Deep Explanation)
+
+Web Part Lifecycle
+
+onInit()
+
+render()
+
+onDispose()
+
+
+UI Technologies
+
+SPFx supports:
+
+React (most recommended)
+
+TypeScript
+
+Fluent UI (Office UI Fabric)
+
+Tailwind (with configuration)
+
+REST API integration
+
+Graph API integration
+
+
+
+---
+
+CHAPTER 26 – SPFx Extensions (Detailed)
+
+1. Application Customizer
+
+Used for:
+
+Custom headers
+
+Custom footers
+
+Notification bars
+
+Inject analytics scripts
+
+
+2. Field Customizer
+
+Used to modify:
+
+JSON formatting
+
+Custom cell rendering
+
+Icons, colors, badges
+
+
+3. Command Set
+
+Used to add:
+
+Toolbar buttons
+
+Right-click menu options
+
+Custom actions (approve, assign)
+
+
+
+---
+
+CHAPTER 27 – Deploying SPFx Solutions
+
+Deployment Steps
+
+1. Build
+
+gulp build
+
+
+2. Bundle
+
+gulp bundle --ship
+
+
+3. Package
+
+gulp package-solution --ship
+
+
+4. Upload to App Catalog
+
+Tenant App Catalog
+
+Site App Catalog
+
+
+
+5. Deploy to Site
+
+
+
+
+---
+
+CHAPTER 28 – SharePoint REST API (Full Reference)
+
+REST Endpoint:
+
+https://tenant.sharepoint.com/_api/
+
+Common Operations
+
+✔ Get List Items
+
+/_api/web/lists/getbytitle('ListName')/items
+
+✔ Create Item
+
+POST /_api/web/lists/getbytitle('ListName')/items
+
+✔ Get Libraries
+
+/_api/web/lists?$filter=BaseTemplate eq 101
+
+✔ Upload File
+
+/_api/web/GetFolderByServerRelativeUrl('/Library')/Files/add(...)
+
+✔ User Info
+
+/_api/web/currentuser
+
+
+---
+
+CHAPTER 29 – Microsoft Graph API (Advanced)
+
+Graph API is the universal API for Microsoft 365.
+
+Common Scenarios
+
+Fetch Teams info
+
+List OneDrive files
+
+Get user profile photos
+
+Access Planner tasks
+
+Read Outlook mails
+
+Search across Microsoft 365
+
+
+Graph Endpoint:
+
+https://graph.microsoft.com/v1.0/
+
+
+---
+
+CHAPTER 30 – PnP JS Library (Simple & Fast)
+
+PnPJS helps call SharePoint APIs easily.
+
+Examples
+
+✔ Get items:
+
+const items = await sp.web.lists.getByTitle("List").items();
+
+✔ Add item:
+
+sp.web.lists.getByTitle("List").items.add({ Title: "New Item" });
+
+✔ Get files:
+
+sp.web.getFolderByServerRelativeUrl("/Library").files();
+
+
+---
+
+CHAPTER 31 – PnP PowerShell (Admin Automation)
+
+Common Commands
+
+✔ Connect to SharePoint:
+
+Connect-PnPOnline -Url https://tenant.sharepoint.com
+
+✔ List all sites:
+
+Get-PnPTenantSite
+
+✔ Create site:
+
+New-PnPSite -Type TeamSite -Title "NewSite"
+
+✔ Export site permissions:
+
+Get-PnPSitePermission
+
+✔ Add content type:
+
+Add-PnPContentType
+
+
+---
+
+CHAPTER 32 – SharePoint Branding & Theming
+
+Branding Tools
+
+Theme designer (JSON theme files)
+
+Company theme gallery
+
+Custom fonts & colors
+
+Header/footer customization
+
+Hub site navigation
+
+Site logos
+
+
+Modern Theme Structure
+
+Uses:
+
+Primary color
+
+Body color
+
+Background color
+
+Neutral palette
+
+
+
+---
+
+CHAPTER 33 – Page Modeling & Modern Pages
+
+Types of modern pages:
+
+Home page
+
+News post
+
+Landing page
+
+Dashboard page
+
+
+Best Practices:
+
+Use sections (1 column, 2 column, 3 column)
+
+Avoid long scroll
+
+Use hero web part for strong visuals
+
+Include navigation links
+
+Use Quick Links instead of text links
+
+
+
+---
+
+CHAPTER 34 – Integration with Microsoft Teams
+
+SharePoint powers Teams in the background.
+
+Where SharePoint is used in Teams?
+
+Teams Feature	Backed by SharePoint
+
+Files tab	SharePoint library
+Wiki (deprecated)	SharePoint pages
+Lists app	SharePoint lists
+Document collaboration	SharePoint Online
+Teams site	Microsoft 365 Group site
+
+
+You can add:
+
+SPFx web parts into Teams tabs
+
+SharePoint pages into Teams
+
+Lists/Libraries into Teams
+
+
+
+---
+
+CHAPTER 35 – OneDrive Deep Architecture
+
+OneDrive = personal SharePoint site.
+
+Features:
+
+Sync engine
+
+Personal vault
+
+Known Folder Move (KFM)
+
+Files on-demand
+
+Auto-save from Office
+
+Ransomware detection
+
+
+Where OneDrive stores content:
+
+https://tenant-my.sharepoint.com/personal/user/
+
+
+---
+
+CHAPTER 36 – Backup & Recovery in SharePoint Online
+
+SharePoint Online automatically maintains:
+
+✔ Recycle Bin
+
+93 days retention
+
+Stage 1 + Stage 2 recycle bin
+
+
+✔ Version History
+
+Unlimited (if enabled)
+
+Restore older versions individually
+
+
+✔ Files Restore
+
+Restore entire library to previous time
+
+Useful after ransomware attack
+
+
+✔ No manual backup required
+
+Microsoft manages:
+
+Datacenter redundancy
+
+Geo-redundant storage
+
+Server failover systems
+
+
+Admins can use:
+
+3rd party backups (AvePoint / Veeam / Datto)
+
+
+
+---
+
+CHAPTER 37 – Performance Optimization
+
+Tips
+
+Use metadata, avoid deep folder nesting
+
+Use HUB navigation instead of custom menus
+
+Avoid very large lists (>5,000 items in a view)
+
+Use indexed columns
+
+Turn on CDN for modern pages
+
+Minimize custom scripts
+
+
+
+---
+
+CHAPTER 38 – Enterprise Intranet Architecture
+
+Ideal model:
+
+Root site (Communication site)
+     |
+  Hub sites
+     |
+ Departments → HR / IT / Finance
+     |
+ Team Sites → Project Sites
+
+Why use Hubs?
+
+Unified branding
+
+Unified navigation
+
+Scoped search
+
+Reusable templates
+
+Better organization
+
+
+
+---
+
+CHAPTER 39 – Real-Life SharePoint Use Cases
+
+1. Employee Intranet
+
+News portal
+
+Leadership messages
+
+Policies
+
+Quick links
+
+
+2. Document Management System
+
+Versioning
+
+Approvals
+
+Metadata based navigation
+
+
+3. HR Portal
+
+Onboarding
+
+Employee forms
+
+Policies
+
+Helpdesk
+
+
+4. Project Management
+
+Task tracking
+
+RAID logs
+
+Resource management
+
+
+5. Compliance Portal
+
+Records management
+
+Retention
+
+DLP rules
+
+
+
+---
+
+✔ End of Part 3
+
+
+---
+
+👉 Ready for Part 4?
+
+Part 4 will include:
+
+✔ Complete SharePoint Interview Questions (Beginner + Experienced + Architect)
+
+✔ Real-world architecture diagrams
+
+✔ SharePoint Online limits
+
+✔ Governance handbook
+
+✔ SPFx coding patterns
+
+✔ Site templates + intranet examples
+
+✔ Complete OneDrive admin guide
+
+✔ Search tuning guide
+
+✔ Hybrid SharePoint (On-prem + Online)
+
+✔ Troubleshooting SharePoint
