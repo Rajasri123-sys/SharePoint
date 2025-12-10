@@ -152,3 +152,9 @@ Note: Set expiration date is only available if it is an anyone link.
 
 Set password lets you set a password to access the file. When a user clicks the link, they will be prompted to enter a password before they can access the file. You'll need to provide this password separately to anyone you want to share the file with. Set password date is only on anonymous links.
 Note:  Set password date is only available if it is an anyone link.​​​​​​​
+
+Converting existing sites to "modern" team sites:
+Existing collaboration sites cannot be converted to "modern" team sites with an associated Microsoft 365 group, but you can however associate a new Microsoft 365 group to existing collaboration site. You can also start using modern page and list experiences in the classic sites, which will make them look like a modern group associated team sites.
+"Modern" lists and library usage can be controlled at site, web, and list/library level. You can find more details about the available options in our "modern" list and libraries article.
+By default, "classic" SharePoint sites use modern pages for any newly added page, and you have the option to change the welcome page to a modern page. Setting a new "modern" page for a "classic" SharePoint site can be done programmatically by using CSOM or REST APIs.
+
