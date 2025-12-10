@@ -77,3 +77,56 @@ A user can belong to 5,000 groups per site (site collection), and each group can
 
 Versions
 50,000 major versions and 511 minor versions.
+
+Default SharePoint groups:
+Title-Default permission level-Used for
+Owner-Full control-People who must be able to manage site permissions, settings, and appearance.
+Member-Edit and contribute-People who must be able to edit site content. Permission level depends on the site template that was used to create the site.
+Visitor-Read only-People who must be able to see site content, but not edit it.
+
+Site owner-Full control-In addition to everything a Site member can do, owners can also:
+Change the site theme,
+Change navigation layout
+Change the site logo
+Add or remove site owners
+Edit site member settings
+Add or remove site visitors
+Edit site settings
+Delete the subsite
+Add a Microsoft 365 group
+Associate the site to a hub
+
+Site member-Edit and contribute-Add, edit, and delete lists
+Add, edit, and delete document libraries
+Add or remove site members
+Add, edit, and remove documents
+Add, edit, and delete a page
+Add, edit, delete a news post
+Add, edit, and delete page sections
+Add, edit, and delete web parts
+Add, edit, and delete site navigation
+Create or delete page templates
+View site usage metrics
+
+Site visitor-Read only-View content
+
+Change the logo
+One way you can customize your SharePoint site is by changing the site logo.
+Upload your own site logo under Display by navigating to Settings > Change the look > Header.
+
+Edit the navigation
+You can add or remove links on your site navigation.
+Select Edit at the bottom of your navigation, then add links by selecting the space in-between existing links. Make further edits by selecting the ellipsis next to an existing link to adjust positioning, make sub links, edit, or remove.
+
+When you create a new team or private channel in Microsoft Teams, a team site in SharePoint gets automatically created.
+If the Hub site association option is greyed out or no sites are listed there, you might not have permission to associate sites with a hub site or your organization might not be using hub sites.
+
+Invite people to your SharePoint team site:
+To give people access to your site, you can either add members to the Microsoft 365 group associated with the site, or you can share the site with others without adding them to a Microsoft 365 group. For more information on site permissions, see Understanding permission levels in SharePoint.
+Note: If you're a site owner, you will see a link for Advanced permission settings where you can configure additional SharePoint permission settings.
+
+Change site permissions for individuals:
+To change the permission level for an individual or group, selectthe down arrow next to the SharePoint permission level for that person or group and select Full control to add them to the Site owners group, or select Read to add them to the Site visitors group.
+
+Note: If a member is removed who was part of a Microsoft 365 group, but was also added using Share site only, they will still retain their permissions as an individual.
+
