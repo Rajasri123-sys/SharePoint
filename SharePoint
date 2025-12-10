@@ -2036,3 +2036,3332 @@ Part 4 will include:
 ✔ Hybrid SharePoint (On-prem + Online)
 
 ✔ Troubleshooting SharePoint
+
+
+Here is Part 4 of your Complete SharePoint Full Handbook (Beginner → Advanced) with deep, detailed explanations of every concept.
+This section continues from Part 3 and covers Administration, Security, Governance, Compliance, Backup, Migration, Monitoring, and Tenant-level configuration.
+
+
+---
+
+📘 SHAREPOINT FULL HANDBOOK — PART 4
+
+ADVANCED ADMINISTRATION, SECURITY, COMPLIANCE & GOVERNANCE
+
+
+---
+
+🧩 CHAPTER 16 – SharePoint Admin Center (Modern Admin Center)
+
+The SharePoint Admin Center is the central place for all SharePoint & OneDrive management inside Microsoft 365.
+
+
+---
+
+16.1 What You Can Manage in Admin Center
+
+The modern admin center provides:
+
+✔ Site Management
+
+Create new sites (Team sites, Communication sites)
+
+View all sites in the tenant
+
+Edit site owners, storage limits, external sharing, templates
+
+Delete/restore sites
+
+Change primary administrator
+
+Configure Hub site settings
+
+
+✔ Policies
+
+Sharing policies
+
+Access control
+
+Idle session sign-out
+
+Network and location restrictions
+
+
+✔ Content Services
+
+Term Store (managed metadata)
+
+Content Type Gallery
+
+Migration Manager
+
+Record Management settings
+
+
+✔ OneDrive Admin Controls
+
+Sync client settings
+
+Default storage limits
+
+User account access after employee leaves
+
+Sharing and security settings
+
+
+
+---
+
+🧩 CHAPTER 17 – SITE MANAGEMENT IN DETAIL
+
+
+---
+
+17.1 Site Creation Types
+
+SharePoint supports:
+
+1. Team Site
+
+Connected to a Microsoft 365 group
+
+Used for collaboration
+
+Integrated with Planner, Outlook, Teams
+
+Has shared mailbox + calendar
+
+
+2. Communication Site
+
+Not connected to a group
+
+Broadcast information to large audiences
+
+Used for portals, intranets, dashboards
+
+
+3. Classic Sites (Deprecated)
+
+Used only for legacy apps
+
+Should not be used for new solutions
+
+
+
+---
+
+17.2 Site Settings You Can Configure
+
+✔ Site Name & URL
+
+✔ Site Template (Modern only)
+
+✔ Site Owners
+
+✔ Storage Quota
+
+✔ Sharing Level
+
+Anyone with link
+
+New and existing guests
+
+Only existing guests
+
+Only internal users
+
+
+✔ Sensitivity Labels
+
+Control classification:
+
+Public
+
+Confidential
+
+Highly Confidential
+
+
+✔ Delete or Restore Site
+
+Deleted sites go to Site Recycle Bin (93 days retention)
+
+
+
+---
+
+🧩 CHAPTER 18 – MANAGED METADATA & TERM STORE
+
+
+---
+
+18.1 What is Managed Metadata?
+
+A centralized way to store classification labels used across the tenant.
+
+You can create:
+
+Term Groups
+
+Term Sets
+
+Terms
+
+Custom properties
+
+Localization for multiple languages
+
+
+
+---
+
+18.2 Why Use Managed Metadata?
+
+Consistency across libraries
+
+Reusable tags
+
+Better search ranking
+
+Navigation building
+
+
+
+---
+
+18.3 Applications
+
+Enterprise Keywords
+
+Content Type tagging
+
+Navigation menus
+
+Search refiners
+
+
+
+---
+
+🧩 CHAPTER 19 – CONTENT TYPES & INFORMATION ARCHITECTURE
+
+
+---
+
+19.1 Content Types
+
+A Content Type defines the structure of a document or item.
+
+It includes:
+
+Columns
+
+Metadata
+
+Templates
+
+Workflows
+
+Retention settings
+
+
+
+---
+
+19.2 Content Type Gallery
+
+A centralized place in the admin center where you can:
+
+Create content types
+
+Publish across sites
+
+Add columns
+
+Add document templates (Word/Excel/PowerPoint)
+
+
+
+---
+
+🧩 CHAPTER 20 – SHAREPOINT SECURITY MODEL
+
+
+---
+
+20.1 Authentication vs Authorization
+
+Authentication → Who you are
+
+Authorization → What you can access
+
+
+Modern SharePoint uses:
+
+Azure AD Authentication
+
+Conditional Access Policies
+
+MFA
+
+
+
+---
+
+20.2 Permission Levels
+
+Built-in permission levels:
+
+Level	Description
+
+Full Control	All permissions
+Edit	Add/edit/delete lists
+Contribute	Add, edit, delete items
+Read	Read-only
+View Only	View-only for Web Pages
+
+
+
+---
+
+20.3 SharePoint Groups
+
+Owners (full control)
+
+Members (edit)
+
+Visitors (read)
+
+
+Custom groups can also be created.
+
+
+---
+
+20.4 Sharing Controls
+
+Admin can configure:
+
+External sharing ON/OFF
+
+User-link expiration
+
+Domain allow/block lists
+
+Anonymous links
+
+
+
+---
+
+🧩 CHAPTER 21 – COMPLIANCE, RETENTION & RECORDS MANAGEMENT
+
+
+---
+
+21.1 Microsoft Purview Compliance Integration
+
+SharePoint integrates with Purview for:
+
+✔ Data Loss Prevention (DLP)
+
+Blocks sensitive data like:
+
+PAN
+
+Aadhaar
+
+Passport
+
+Financial information
+
+Health data
+
+
+✔ Sensitivity Labels
+
+Automatic classification of documents.
+
+✔ Retention Policies
+
+Keep content for X years
+
+Auto-delete content after retention
+
+Retain-only (cannot delete manually)
+
+
+
+---
+
+21.2 Records Management
+
+Documents can be declared as records:
+
+Cannot delete
+
+Cannot modify
+
+Can track auditing
+
+
+
+---
+
+🧩 CHAPTER 22 – ONE DRIVE ADMINISTRATION
+
+
+---
+
+22.1 OneDrive Default Storage
+
+Default: 1 TB
+
+Can increase up to 5 TB per user
+
+
+
+---
+
+22.2 OneDrive Sharing Policies
+
+Control external sharing
+
+Block downloading
+
+Block shared folder syncing
+
+
+
+---
+
+22.3 Sync Controls
+
+Allow/block syncing on unmanaged devices
+
+Limit syncing to specific domains
+
+Control bandwidth usage
+
+
+
+---
+
+22.4 Access After Employee Leaves
+
+Admin can configure:
+
+Keep files for 30 days (default)
+
+Transfer ownership
+
+Disable access immediately
+
+
+
+---
+
+🧩 CHAPTER 23 – MIGRATIONS
+
+
+---
+
+23.1 SharePoint Migration Tool (SPMT)
+
+Migrates:
+
+File shares
+
+On-prem SharePoint
+
+Document libraries
+
+
+Features:
+
+Incremental migration
+
+Error reporting
+
+Permission mapping
+
+
+
+---
+
+23.2 Migration Manager (Admin Center)
+
+Centralized management panel
+
+Supports multiple agents
+
+Reports & dashboards
+
+
+
+---
+
+23.3 Third-party Migration Tools
+
+ShareGate (most popular)
+
+AvePoint
+
+Metalogix
+
+
+
+---
+
+🧩 CHAPTER 24 – BACKUP & RECOVERY
+
+
+---
+
+24.1 Recycle Bin (User Level)
+
+Retained for 93 days
+
+Users can restore items
+
+
+
+---
+
+24.2 Site Collection Recycle Bin
+
+If user deletes, it moves here.
+
+
+---
+
+24.3 Version History
+
+SharePoint keeps unlimited versions (configurable).
+
+
+---
+
+24.4 Accidental Deletion Recovery
+
+Admin can restore:
+
+Sites
+
+Files
+
+Lists
+
+Libraries
+
+
+
+---
+
+🧩 CHAPTER 25 – MONITORING & REPORTING
+
+
+---
+
+25.1 Usage Analytics
+
+Shows:
+
+Visitor count
+
+Page analytics
+
+Popular content
+
+Search usage
+
+
+
+---
+
+25.2 Storage Reports
+
+Per site:
+
+Storage used
+
+Maximum storage
+
+Active file count
+
+
+
+---
+
+25.3 Sharing Reports
+
+Shows:
+
+External sharing activities
+
+Anonymous link usage
+
+
+
+---
+
+🧩 CHAPTER 26 – SHAREPOINT GOVERNANCE
+
+Governance is policy + process + responsibility.
+
+
+---
+
+26.1 Key Governance Areas
+
+Roles & responsibilities
+
+Naming conventions
+
+Site creation policies
+
+Sharing rules
+
+Content lifecycle policies
+
+Security guidelines
+
+Backup & retention
+
+Monitoring
+
+
+
+---
+
+26.2 Governance Best Practices
+
+Centralized content types
+
+Use metadata over folders
+
+Use hubs for navigation
+
+Enable auditing
+
+Limit site sprawl
+
+
+
+---
+
+🧩 CHAPTER 27 – SHAREPOINT ARCHITECTURE (MODERN)
+
+
+---
+
+27.1 Modern Architecture Principles
+
+Flat architecture instead of subsites
+
+Hub sites connecting logical areas
+
+Power Platform integration
+
+Search personalization
+
+
+
+---
+
+27.2 Modern Search
+
+Uses:
+
+Microsoft Search
+
+AI-powered ranking
+
+Personalized search results
+
+
+
+---
+
+🧩 CHAPTER 28 – SHAREPOINT WITH POWER PLATFORM
+
+
+---
+
+28.1 PowerApps Integration
+
+Use cases:
+
+Custom forms
+
+Data collection apps
+
+Workflows
+
+
+
+---
+
+28.2 Power Automate Integration
+
+Automate:
+
+Approvals
+
+Notifications
+
+File processing
+
+Document generation
+
+
+
+---
+
+28.3 Power BI Integration
+
+Embed dashboards in SharePoint pages
+
+Share datasets
+
+Use SharePoint lists as sources
+
+
+
+---
+
+🧩 PART 4 SUMMARY
+
+This part covered: ✔ SharePoint Admin Center
+✔ Site Management
+✔ Metadata, Term Store
+✔ Security Model
+✔ Compliance & Retention
+✔ OneDrive Admin
+✔ Migration
+✔ Backup & Restore
+✔ Monitoring & Governance
+✔ Modern Architecture
+✔ Power Platform Integration
+
+
+---
+
+Below is PART 5 of your Complete SharePoint Full Handbook (Beginner → Advanced)—
+focusing entirely on SPFx Development (SharePoint Framework) with deep explanations, architecture, commands, examples, and best practices.
+
+This is a full SPFx development course-level content.
+
+
+---
+
+📘 SHAREPOINT FULL HANDBOOK — PART 5
+
+⭐ SPFx DEVELOPMENT (BEGINNER → ADVANCED)
+
+
+---
+
+🧩 CHAPTER 29 – What is SPFx?
+
+The SharePoint Framework (SPFx) is a client-side development model used to build:
+
+✔ Web Parts
+✔ Extensions
+✔ Custom Forms
+✔ Command Sets
+✔ Application Customizers
+✔ Full React apps in SharePoint
+
+Key Features
+
+100% client-side
+
+Runs in modern SharePoint pages
+
+Supports React, Angular, Vue, jQuery, plain JS
+
+Uses TypeScript + Node.js + Webpack
+
+Integrates with Microsoft Graph
+
+Supports Teams apps
+
+Works with On-Prem (SP 2016, 2019) and Online
+
+
+
+---
+
+🧩 CHAPTER 30 – SPFx Architecture
+
+SPFx runs directly in the browser.
+It is built using:
+
+Node.js – runtime
+
+Yeoman – scaffolding
+
+Gulp – task runner
+
+Webpack – bundling
+
+TypeScript – scripting
+
+React – UI framework (recommended)
+
+
+Architecture Layers
+
++-------------------------------+
+|      SharePoint Page         |
++-------------------------------+
+|     SPFx Framework APIs      |
++-------------------------------+
+|     Your Web Part Code       |
++-------------------------------+
+|     TypeScript + React       |
++-------------------------------+
+| Node.js + Gulp + Webpack     |
++-------------------------------+
+
+SPFx renders components inside a SharePoint Canvas.
+
+
+---
+
+🧩 CHAPTER 31 – Environment Setup
+
+Install the necessary tools:
+
+✔ 1. Install Node.js
+
+Supported versions change often—use Microsoft recommended LTS.
+
+https://nodejs.org/
+
+✔ 2. Install Yeoman & SPFx Generator
+
+npm install -g yo gulp
+npm install -g @microsoft/generator-sharepoint
+
+✔ 3. Install Visual Studio Code
+
+IDE for SPFx.
+
+✔ 4. Install Git
+
+For version control.
+
+✔ 5. Install PnPjs Library (optional but recommended)
+
+npm install @pnp/sp @pnp/graph
+
+
+---
+
+🧩 CHAPTER 32 – Create Your First SPFx Web Part
+
+Use Yeoman to create a new project:
+
+yo @microsoft/sharepoint
+
+You will be asked:
+
+✔ Solution name
+
+✔ Target environment
+
+SharePoint Online (recommended)
+
+Teams
+
+SP 2019
+
+SP 2016
+
+
+✔ WebPart type
+
+Web Part
+
+Extension
+
+
+✔ Template
+
+React
+
+No JavaScript
+
+Knockout
+
+
+Choose React.
+
+
+---
+
+Directory structure
+
+src/
+  webparts/
+    yourWebPart/
+      components/
+      YourWebPart.ts
+config/
+node_modules/
+gulpfile.js
+package.json
+
+
+---
+
+🧩 CHAPTER 33 – Run SPFx Locally
+
+Use the SharePoint Workbench:
+
+gulp serve
+
+Opens:
+
+https://localhost:4321/temp/workbench.html
+
+OR Online:
+
+https://<tenant>.sharepoint.com/_layouts/15/workbench.aspx
+
+
+---
+
+🧩 CHAPTER 34 – Deploy SPFx Web Part to SharePoint
+
+Step 1 → Build
+
+gulp build
+gulp bundle --ship
+
+Step 2 → Package
+
+gulp package-solution --ship
+
+Creates:
+
+sharepoint/solution/*.sppkg
+
+Step 3 → Upload to App Catalog
+
+SharePoint Admin Center → More Features → App Catalog
+
+Step 4 → Add App to Site
+
+Site Contents → Add App → Your SPFx App
+
+Now the web part is available in the “+ Add Web Part” panel.
+
+
+---
+
+🧩 CHAPTER 35 – SPFx WEB PART DEVELOPMENT (ADVANCED)
+
+
+---
+
+✔ Using React inside SPFx
+
+React component rendering happens in:
+
+YourWebPart.ts → ReactDOM.render()
+
+Component folder:
+
+components/MyComponent.tsx
+
+Sample React Component:
+
+export default function MyComponent(props) {
+  return (
+    <div>
+      <h1>Hello {props.name}</h1>
+    </div>
+  );
+}
+
+
+---
+
+✔ Using State
+
+const [count, setCount] = React.useState(0);
+
+
+---
+
+✔ Using Props
+
+<MyComponent name="SharePoint" />
+
+
+---
+
+✔ Using Services (PnPjs)
+
+import { sp } from '@pnp/sp';
+
+sp.web.lists.getByTitle("Demo").items.get().then(items => {
+  console.log(items);
+});
+
+
+---
+
+🧩 CHAPTER 36 – EXTENSIONS
+
+SPFx Extensions allow customization of:
+
+
+---
+
+✔ Application Customizers
+
+Adds custom UI such as:
+
+Header
+
+Footer
+
+Navigation
+
+Alerts
+
+
+Generate:
+
+yo @microsoft/sharepoint
+→ Extension → Application Customizer
+
+
+---
+
+✔ Field Customizers
+
+Modify how list fields look.
+
+Example:
+
+Status badges
+
+Rating stars
+
+
+
+---
+
+✔ Command Set
+
+Add buttons to list toolbar.
+
+Example:
+
+Approve
+
+Reject
+
+Custom workflow
+
+
+Generate:
+
+yo @microsoft/sharepoint
+→ Extension → ListView Command Set
+
+
+---
+
+🧩 CHAPTER 37 – API INTEGRATION
+
+
+---
+
+✔ Microsoft Graph API
+
+Install Graph:
+
+npm install @microsoft/mgt @microsoft/mgt-react
+
+OR PnP Graph:
+
+npm install @pnp/graph
+
+Get user data:
+
+graph.me.get().then(user => {
+  console.log(user.displayName);
+});
+
+
+---
+
+✔ Calling External API
+
+Use AadHttpClient:
+
+this.context.aadHttpClientFactory
+  .getClient(appId)
+  .then(client => {
+    return client.get(apiURL, HttpClient.configurations.v1);
+  })
+
+
+---
+
+✔ Calling SharePoint REST API
+
+this.context.spHttpClient.get(
+  "/_api/web/lists/getByTitle('Demo')/items",
+  SPHttpClient.configurations.v1
+);
+
+
+---
+
+🧩 CHAPTER 38 – DEPLOYMENT MODELS
+
+✔ 1. Tenant Wide Deployment
+
+Web part available on all sites.
+
+✔ 2. Site App Catalog
+
+App added only to specific site.
+
+✔ 3. Teams Deployment
+
+Enable manifest → Teams App.
+
+
+---
+
+🧩 CHAPTER 39 – PERFORMANCE OPTIMIZATION
+
+✔ Lazy Loading
+
+Load components only when needed.
+
+✔ Code Splitting
+
+Use React lazy.
+
+✔ Caching with PnPjs
+
+sp.web.lists.usingCaching().get();
+
+✔ Minification
+
+Bundling with Webpack reduces size.
+
+
+---
+
+🧩 CHAPTER 40 – BEST PRACTICES FOR SPFx
+
+✔ Use React and PnPjs
+
+FASTEST and MOST PRODUCTIVE.
+
+✔ Avoid Large Bundles
+
+Use libraries wisely.
+
+✔ Use Environment Variables
+
+Store API URLs safely.
+
+✔ Use Graph API for user info
+
+✔ Keep UI responsive
+
+Using Fluent UI or custom components.
+
+
+---
+
+🧩 CHAPTER 41 – FLUENT UI IN SPFx
+
+Install Fluent UI:
+
+npm install @fluentui/react
+
+Usage:
+
+import { PrimaryButton } from '@fluentui/react';
+
+<PrimaryButton text="Click Me" />
+
+
+---
+
+🧩 CHAPTER 42 – SPFx with Power Platform
+
+
+---
+
+✔ SPFx inside PowerApps
+
+Canvas apps embed SPFx custom components.
+
+✔ SPFx + Power Automate
+
+Trigger workflows from web part.
+
+✔ SPFx + Power BI
+
+Embed BI dashboards in React.
+
+
+---
+
+🧩 CHAPTER 43 – ADVANCED SPFx TOPICS
+
+
+---
+
+✔ 1. Dynamic Data
+
+Pass data between web parts.
+
+✔ 2. Adaptive Cards
+
+Show interactive cards inside SPFx.
+
+✔ 3. Multi-Tab Web Components
+
+Create dashboards.
+
+✔ 4. Using Redux
+
+State management for large solutions.
+
+✔ 5. Integrating Charts
+
+Like Chart.js or Recharts.
+
+
+---
+
+✨ PART 5 SUMMARY
+
+This part covered:
+
+✔ SPFx architecture
+✔ Setup and environment
+✔ Web parts
+✔ Extensions
+✔ React development
+✔ Graph & REST API integration
+✔ Deployment
+✔ Fluent UI
+✔ Power Platform integration
+✔ Advanced SPFx patterns
+
+
+---
+
+
+Here is PART 6 of your Complete SharePoint Full Handbook (Beginner → Advanced) —
+This section is the SharePoint Developer Bible, covering:
+
+✅ REST API
+✅ CSOM
+✅ JSOM
+✅ Microsoft Graph
+✅ PnP PowerShell
+✅ PnPjs
+✅ Webhooks
+✅ Search API
+✅ Modern APIs
+…and every concept used by SharePoint developers (FULLY explained).
+
+This is extremely detailed — use this as your final SharePoint Developer reference.
+
+
+---
+
+📘 SHAREPOINT FULL HANDBOOK — PART 6
+
+⭐ SHAREPOINT DEVELOPER GUIDE (REST, CSOM, GRAPH, PNP, SEARCH, WEBHOOKS)
+
+
+---
+
+🧩 CHAPTER 44 – SharePoint Development Models
+
+SharePoint development can be done using:
+
+
+---
+
+1. REST API (Modern)
+
+Used in:
+
+SPFx
+
+PowerApps
+
+Power Automate
+
+External apps
+
+
+
+---
+
+2. Microsoft Graph API
+
+Used for:
+
+User data
+
+Groups
+
+Teams
+
+Files
+
+Permissions
+
+
+
+---
+
+3. PnPjs (JavaScript SDK)
+
+Used in:
+
+SPFx web parts
+
+React apps
+
+
+
+---
+
+4. PnP PowerShell
+
+Most powerful admin automation.
+
+
+---
+
+5. CSOM (Client-Side Object Model)
+
+Used in:
+
+C#
+
+PowerShell
+
+Remote apps
+
+
+
+---
+
+6. JSOM (JavaScript Object Model)
+
+Legacy model used in classic pages.
+
+
+---
+
+7. Webhooks
+
+Get notifications when list item changes.
+
+
+---
+
+8. Search REST API
+
+Used for:
+
+Custom search
+
+Query suggestions
+
+Filtering
+
+
+
+---
+
+
+---
+
+🧩 CHAPTER 45 – SHAREPOINT REST API (Modern)
+
+Modern, fast, used everywhere.
+
+REST URL format:
+
+https://<tenant>.sharepoint.com/sites/<site>/_api/<service>
+
+
+---
+
+✔ 45.1 Authentication
+
+Uses OAuth tokens automatically in:
+
+SPFx
+
+Power Automate
+
+PowerApps
+
+
+For external apps:
+
+Azure AD App Registration
+
+Client Credentials flow
+
+
+
+---
+
+✔ 45.2 GET All Lists
+
+/_api/web/lists
+
+
+---
+
+✔ 45.3 GET Specific List
+
+/_api/web/lists/getByTitle('Employees')
+
+
+---
+
+✔ 45.4 GET Items
+
+/_api/web/lists/getByTitle('Employees')/items
+
+
+---
+
+✔ 45.5 GET Item by ID
+
+/items(5)
+
+
+---
+
+✔ 45.6 Filter Items
+
+/items?$filter=Department eq 'HR'
+
+
+---
+
+✔ 45.7 Select Specific Columns
+
+/items?$select=Id,Title,Location
+
+
+---
+
+✔ 45.8 Expand Lookup Columns
+
+/items?$expand=Manager
+
+
+---
+
+✔ 45.9 TOP Items
+
+/items?$top=50
+
+
+---
+
+✔ 45.10 Add Item (POST)
+
+{
+ "__metadata": { "type": "SP.Data.EmployeesListItem" },
+ "Title": "John",
+ "Department": "Finance"
+}
+
+
+---
+
+✔ 45.11 Update Item (MERGE)
+
+Send headers:
+
+X-HTTP-Method: MERGE
+IF-MATCH: *
+
+
+---
+
+✔ 45.12 Delete Item
+
+POST with:
+X-HTTP-Method: DELETE
+IF-MATCH: *
+
+
+---
+
+
+---
+
+🧩 CHAPTER 46 – CSOM (Client-Side Object Model)
+
+Used in C#, PowerShell, Azure Functions.
+
+
+---
+
+✔ 46.1 Authentication Example in C#
+
+var context = new ClientContext("https://tenant/sites/site");
+context.Credentials = new SharePointOnlineCredentials(user, securePassword);
+
+
+---
+
+✔ 46.2 Get Web Title
+
+var web = context.Web;
+context.Load(web);
+context.ExecuteQuery();
+Console.WriteLine(web.Title);
+
+
+---
+
+✔ 46.3 Get Lists
+
+var lists = context.Web.Lists;
+context.Load(lists);
+context.ExecuteQuery();
+
+
+---
+
+✔ 46.4 Create List Item
+
+var list = context.Web.Lists.GetByTitle("Employees");
+var item = list.AddItem(new ListItemCreationInformation());
+item["Title"] = "John";
+item.Update();
+context.ExecuteQuery();
+
+
+---
+
+✔ 46.5 Update / Delete is similar
+
+CSOM is very reliable and most used in automation.
+
+
+---
+
+
+---
+
+🧩 CHAPTER 47 – JSOM (Legacy JavaScript Object Model)
+
+Used only in classic SharePoint.
+
+Not recommended anymore, but you should know it.
+
+
+---
+
+✔ JSOM Example
+
+var ctx = SP.ClientContext.get_current();
+var web = ctx.get_web();
+ctx.load(web);
+ctx.executeQueryAsync(() => {
+  console.log(web.get_title());
+});
+
+
+---
+
+
+---
+
+🧩 CHAPTER 48 – MICROSOFT GRAPH FOR SHAREPOINT
+
+Graph accesses SharePoint through OneDrive endpoints.
+
+
+---
+
+✔ 48.1 Get Drive of a Site
+
+/v1.0/sites/{site-id}/drive
+
+
+---
+
+✔ 48.2 Get Items in Document Library
+
+/v1.0/sites/{site-id}/drive/root/children
+
+
+---
+
+✔ 48.3 Upload File
+
+PUT /drive/items/root:/Folder1/test.txt:/content
+
+
+---
+
+✔ 48.4 Get User Information
+
+/v1.0/me
+
+
+---
+
+✔ 48.5 List Members of a Group
+
+/v1.0/groups/{id}/members
+
+
+---
+
+When to Use Graph Instead of REST?
+
+Use Graph when accessing:
+
+Users
+
+Groups
+
+Teams
+
+OneDrive files
+
+App permissions
+
+
+
+---
+
+
+---
+
+🧩 CHAPTER 49 – PnPJS (Modern JavaScript SDK)
+
+The BEST library to use with SPFx + React.
+
+
+---
+
+✔ 49.1 Setup
+
+npm install @pnp/sp @pnp/graph
+
+Init:
+
+sp.setup({ spfxContext: this.context });
+
+
+---
+
+✔ 49.2 Get Items
+
+sp.web.lists.getByTitle("Employees").items.get()
+
+
+---
+
+✔ 49.3 Add Item
+
+sp.web.lists.getByTitle("Employees").items.add({
+  Title: "John"
+});
+
+
+---
+
+✔ 49.4 Update Item
+
+sp.web.lists.getByTitle("Employees").items.getById(5).update({
+  Department: "IT"
+});
+
+
+---
+
+✔ 49.5 Delete Item
+
+sp.web.lists.getByTitle("Employees").items.getById(5).delete();
+
+
+---
+
+✔ 49.6 File Upload
+
+sp.web.getFolderByServerRelativeUrl("/sites/demo/Docs")
+  .files.add("test.txt", "Hello", true);
+
+
+---
+
+
+---
+
+🧩 CHAPTER 50 – PnP POWERSHELL
+
+Most powerful automation tool.
+
+
+---
+
+✔ 50.1 Install
+
+Install-Module PnP.PowerShell
+
+
+---
+
+✔ 50.2 Connect
+
+Connect-PnPOnline -Url "https://tenant.sharepoint.com" -Interactive
+
+
+---
+
+✔ 50.3 Get Sites
+
+Get-PnPTenantSite
+
+
+---
+
+✔ 50.4 Create List Item
+
+Add-PnPListItem -List "Employees" -Values @{
+  Title="John"; Department="Finance"
+}
+
+
+---
+
+✔ 50.5 Upload File
+
+Add-PnPFile -Path "C:\Docs\file.pdf" -Folder "Shared Documents"
+
+
+---
+
+✔ 50.6 Apply Site Template
+
+Invoke-PnPSiteTemplate -Path template.xml
+
+
+---
+
+PnP PowerShell is SUPER EXTENSIVE—your admin automation works here.
+
+
+---
+
+
+---
+
+🧩 CHAPTER 51 – SHAREPOINT SEARCH API
+
+Allows building custom search pages.
+
+
+---
+
+✔ 51.1 Basic Search
+
+/_api/search/query?queryText='report'
+
+
+---
+
+✔ 51.2 Search with Filters
+
+queryText='Title:Invoice'
+
+
+---
+
+✔ 51.3 Search With Refiners
+
+refiners=Department
+
+
+---
+
+✔ 51.4 Get Search Suggestions
+
+/_api/search/suggest?queryText='sal'
+
+
+---
+
+Search API is essential for enterprise search solutions.
+
+
+---
+
+
+---
+
+🧩 CHAPTER 52 – SHAREPOINT WEBHOOKS
+
+Trigger events when list items change.
+
+
+---
+
+✔ Supported Events:
+
+Item Added
+
+Item Updated
+
+Item Deleted
+
+
+
+---
+
+✔ 52.1 Register Webhook
+
+POST /_api/web/lists/getByTitle('Employees')/subscriptions
+
+
+---
+
+✔ Required Fields:
+
+notificationUrl
+
+expirationDateTime
+
+clientState
+
+
+Webhook will call your API endpoint.
+
+
+---
+
+
+---
+
+🧩 CHAPTER 53 – SHAREPOINT LIST FORM CUSTOMIZATION
+
+There are 3 ways:
+
+
+---
+
+✔ 1. PowerApps Custom Forms
+
+For complex forms
+
+Easiest way
+
+
+
+---
+
+✔ 2. JSON Column Formatting
+
+Color coding
+
+Badges
+
+Icons
+
+Buttons
+
+
+Example:
+
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+     "color": "=if(@currentField == 'High', 'red', 'green')"
+  }
+}
+
+
+---
+
+✔ 3. SPFx List Form Customizer
+
+Used for:
+
+Multi-step forms
+
+Validations
+
+Integrations
+
+
+
+---
+
+
+---
+
+🧩 CHAPTER 54 – MICROSOFT GRAPH PERMISSIONS MODEL
+
+Graph permissions require:
+
+Delegated permissions
+
+Application permissions
+
+
+Admin must grant:
+
+Files.Read.All  
+Sites.ReadWrite.All  
+User.Read.All  
+Group.ReadWrite.All
+
+
+---
+
+
+---
+
+🧩 CHAPTER 55 – MODERN SHAREPOINT CONNECTORS
+
+
+---
+
+✔ 1. Power Automate + SharePoint
+
+Triggers:
+
+When an item is created
+
+When a file is added
+
+Recurrence workflows
+
+
+
+---
+
+✔ 2. PowerApps + SharePoint
+
+Used as a data source.
+
+
+---
+
+✔ 3. Logic Apps
+
+Enterprise-level workflows.
+
+
+---
+
+
+---
+
+✨ PART 6 SUMMARY
+
+This chapter covered:
+
+✔ REST API
+✔ CSOM
+✔ JSOM
+✔ PnPjs
+✔ PnP PowerShell
+✔ Microsoft Graph
+✔ Webhooks
+✔ Search API
+✔ Developer architecture
+✔ Form customization
+✔ Permissions model
+
+This is EVERYTHING needed to become a SharePoint Developer.
+
+
+---
+
+Below is PART 7 – FULL SharePoint Handbook (from Beginner → Advanced)
+Continuing exactly in the same structure as previous parts.
+
+
+---
+
+📘 PART 7 – SHAREPOINT DEVELOPMENT (BEGINNER → ADVANCED)
+
+(Client-Side, Server-Side, Frameworks, APIs, Automation)
+
+
+---
+
+7.0 Introduction to SharePoint Development
+
+SharePoint development is divided into four categories:
+
+1. Client-Side Development
+
+SPFx (SharePoint Framework) → Modern development method
+
+JavaScript/TypeScript
+
+React, Node.js, Graph API
+
+
+2. Server-Side Development (Classic)
+
+Farm solutions
+
+Full trust code
+
+C#, .NET
+(Used only in on-premises SharePoint)
+
+
+3. Low-Code Development
+
+PowerApps
+
+Power Automate
+
+Power Pages
+
+List form customization
+
+
+4. API-Based Development
+
+REST API
+
+Microsoft Graph
+
+Webhooks
+
+CSOM (Client-Side Object Model)
+
+
+
+---
+
+7.1 SharePoint Framework (SPFx)
+
+SPFx is the official development model for SharePoint Online.
+
+7.1.1 Features of SPFx
+
+100% client-side (no server code)
+
+Uses:
+✔ React
+✔ TypeScript
+✔ Node.js
+✔ Webpack
+
+Supports:
+✔ Web parts
+✔ Extensions
+✔ Application customizers
+✔ Command sets
+✔ Field customizers
+
+
+
+---
+
+7.2 SPFx Project Structure
+
+A typical SPFx project contains:
+
+config/             → Build & bundle configs
+node_modules/       → Dependencies
+src/
+  webparts/
+    <yourWebPart>/
+      <Component>.tsx
+      <WebPart>.ts
+package.json        → Dependencies
+gulpfile.js         → Tasks
+
+Important Files
+
+File	Purpose
+
+package.json	Lists npm packages
+gulpfile.js	Build commands
+serve.json	Local testing config
+manifest.json	Web part metadata
+
+
+
+---
+
+7.3 SPFx Web Parts
+
+Types
+
+1. React Web Parts → most used
+
+
+2. Non-React Web Parts → simple JS
+
+
+3. Adaptive Card Extensions (ACEs) → Viva Connections
+
+
+
+Capabilities
+
+Connect to SharePoint lists
+
+Display dashboards
+
+Fetch data using REST or Graph
+
+Create Tiles, Charts, Cards
+
+Provide customization options (Property Pane)
+
+
+
+---
+
+7.4 SPFx Extensions
+
+1. Application Customizer
+
+Inject scripts into pages
+
+Add footers/headers
+
+Add chatbots, notifications
+
+
+2. Field Customizer
+
+Change column UI in a list
+
+Example: status badges, icons
+
+
+3. Command Set
+
+Add custom buttons to list toolbars
+
+Example: “Approve”, “Reject”, “Send Email”
+
+
+
+---
+
+7.5 SPFx Property Pane Controls
+
+Common property controls:
+
+Control	Purpose
+
+TextField	Input text
+Dropdown	Select options
+Toggle	On/Off
+Slider	Numeric values
+Checkbox	Multi-select
+
+
+
+---
+
+7.6 SPFx Deployment
+
+Deployment Steps
+
+1. Build
+
+gulp build
+gulp bundle --ship
+
+
+2. Package
+
+gulp package-solution --ship
+
+
+3. Upload .sppkg to App Catalog
+
+
+4. Deploy to sites
+
+
+5. Add to pages
+
+
+
+
+---
+
+7.7 SharePoint REST API
+
+Base URL:
+
+https://<tenant>.sharepoint.com/_api/
+
+Common REST Endpoints
+
+Purpose	URL
+
+Get lists	/web/lists
+Get items	/web/lists/getByTitle('List')/items
+Create item	POST → /items
+Update item	MERGE → /items(id)
+
+
+
+---
+
+7.8 Microsoft Graph API (for SharePoint)
+
+Graph is the universal API for Microsoft 365.
+
+Common endpoints:
+
+Purpose	Graph Endpoint
+
+Get site	/sites/{site-id}
+Get drive	/drives/{drive-id}
+Upload file	/drive/root:/path/file
+List DriveItems	/drive/root/children
+
+
+
+---
+
+7.9 PnP JS Library
+
+A wrapper for REST API to reduce code.
+
+Example:
+
+import { sp } from "@pnp/sp";
+
+sp.web.lists.getByTitle("Tasks").items.get();
+
+
+---
+
+7.10 PnP PowerShell (Advanced Admin + Dev)
+
+Used for automation:
+
+Create sites
+
+Add lists, libraries
+
+Manage permissions
+
+Deploy SPFx solutions
+
+
+Example:
+
+Connect-PnPOnline -Url https://tenant.sharepoint.com
+Get-PnPSite
+
+
+---
+
+7.11 SharePoint Webhooks
+
+Used to track:
+
+Item Added
+
+Item Updated
+
+Item Deleted
+
+
+Webhook flow:
+
+1. Register webhook
+
+
+2. Get validation token
+
+
+3. Listen on your endpoint
+
+
+4. Handle notifications
+
+
+
+
+---
+
+7.12 SharePoint App Model
+
+1. Add-in model (Legacy)
+
+Provider-hosted apps
+
+SharePoint-hosted apps
+
+Only used in old projects
+
+
+2. Modern model
+
+SPFx
+
+Azure AD App Registration
+
+Graph API
+
+
+
+---
+
+7.13 SharePoint Branding & UI Development
+
+Branding Options:
+
+Feature	Method
+
+Themes	JSON theme files
+Header/Footer	SPFx Application Customizer
+List Forms	PowerApps
+Page Layouts	SPFx / Site Templates
+Web Part Design	React components
+
+
+
+---
+
+7.14 SharePoint List Form Customization
+
+Methods:
+
+Method	Use Case
+
+JSON column formatting	UI custom icons, badges
+JSON list formatting	Custom layout
+PowerApps form	Advanced business forms
+SPFx form	Fully custom forms
+
+
+
+---
+
+7.15 SharePoint Automation
+
+Tools
+
+Power Automate
+
+PnP PowerShell
+
+Logic Apps
+
+Azure Functions
+
+
+Common Automations
+
+Document approval
+
+Update metadata
+
+Send notifications
+
+Move files automatically
+
+Integrate external systems
+
+
+
+---
+
+7.16 SharePoint Security & Permissions for Devs
+
+Concepts:
+
+Permission levels
+
+Role Assignments
+
+Sharing links
+
+App permissions
+
+Graph delegated vs. application permissions
+
+
+Authentication Methods:
+
+OAuth 2.0
+
+MSAL.js
+
+AadHttpClient (SPFx)
+
+Azure AD App Registration
+
+
+
+---
+
+7.17 SharePoint Search & Enterprise Search Development
+
+Search Tools:
+
+Search Query Tool
+
+Query rules
+
+Search API
+
+PnP Modern Search web parts
+
+Filters, refiners, result sources
+
+
+Search REST example:
+
+_api/search/query?querytext='Test'
+
+
+---
+
+7.18 SharePoint Governance & Dev Best Practices
+
+Best Practices:
+
+Avoid storing large data in lists
+
+Use indexing and filters
+
+Minimize synchronous REST calls
+
+Avoid inline script tags
+
+Use Graph instead of SharePoint REST
+
+Use environment variables
+
+Follow Microsoft UX guidelines
+
+
+
+---
+
+7.19 SharePoint Modern Architecture
+
+Layers:
+
+1. Storage Layer
+SharePoint SQL backend (Microsoft-managed)
+
+
+2. Service Layer
+Search, Graph, Compliance, OneDrive, Teams
+
+
+3. Presentation Layer
+Modern pages
+SPFx web parts
+Adaptive Cards
+Viva apps
+
+
+
+
+---
+
+7.20 Advanced SharePoint Concepts
+
+🔹 Content Types & Inheritance
+
+Parent-child structure
+
+Reusable metadata
+
+Document templates
+
+
+🔹 Managed Metadata
+
+Term sets
+
+Taxonomy
+
+Hierarchy classification
+
+
+🔹 IRM (Information Rights Management)
+
+PDF/Word protection
+
+Prevent copy/download/print
+
+
+🔹 Retention Labels
+
+Compliance
+
+Auto-expiration
+
+Records management
+
+
+🔹 Sensitivity Labels
+
+Security classification
+
+Encryption
+
+External sharing control
+
+
+🔹 Tenant-Level Policies
+
+Sharing
+
+Sync
+
+Device restrictions
+
+Conditional Access
+
+
+
+---
+
+Below is 📘 PART 8 – SharePoint Administration Deep-Dive (One of the most important parts for interviews + real-time work).
+This covers EVERY concept in SharePoint Admin from beginner to expert with no concept left out.
+
+
+---
+
+✅ PART 8 — SharePoint Administration (Beginner → Advanced → Expert)
+
+
+---
+
+8.1 Introduction to SharePoint Administration
+
+SharePoint Administration includes managing:
+
+✔ SharePoint Online
+✔ OneDrive
+✔ Sites & Site Collections
+✔ Permissions & Access
+✔ Security & Compliance
+✔ Storage & Backup
+✔ Search
+✔ Sharing Policies
+✔ Migration
+✔ Monitoring
+✔ Site provisioning
+✔ SPFx deployment
+
+Admins manage everything using:
+
+SharePoint Admin Center
+
+Microsoft 365 Admin Center
+
+Security & Compliance Center
+
+Teams Admin Center
+
+Azure AD (Entra ID)
+
+OneDrive Admin Center
+
+PowerShell (PnP + SPO PowerShell)
+
+
+
+---
+
+8.2 SharePoint Admin Center Overview
+
+The modern SharePoint Admin Center includes:
+
+📌 Key Sections:
+
+1. Active sites
+
+
+2. Content services
+
+
+3. Sharing settings
+
+
+4. Access control
+
+
+5. Settings
+
+
+6. Migration manager
+
+
+7. Site creation
+
+
+8. Term store
+
+
+9. Policy settings
+
+
+
+
+---
+
+8.3 SharePoint Active Sites Management
+
+Admin can manage:
+
+Feature	Description
+
+Site Type	Team site / Communication site
+Site URL	Can rename URLs
+Site Owner	Add/remove
+Storage Quota	Set manual or auto
+External Sharing	Per-site control
+Hub Site	Register/unregister
+Sensitivity Label	Apply policies
+Template	Change look
+
+
+Site Types:
+
+Team Sites (collaboration + Teams integration)
+
+Communication Sites (announcements, portals)
+
+Hub Sites (navigation + search center)
+
+Multi-Geo Sites (region-based storage)
+
+Private Channel Sites (Teams)
+
+
+
+---
+
+8.4 OneDrive Admin Overview
+
+OneDrive admin applies to each user:
+
+Admin can control:
+
+Default storage limit (1TB–5TB)
+
+File sharing settings
+
+Sync client settings
+
+Backup (Desktop/Documents/Pictures)
+
+Access to terminated users’ files
+
+Access delegation
+
+
+
+---
+
+8.5 Sharing Settings (Tenant-Level)
+
+Controls who can share and how.
+
+Sharing Levels (Most restrictive → Least restrictive)
+
+1. Only people in your organization
+
+
+2. Specific people
+
+
+3. People with existing access
+
+
+4. Anyone with the link (Anonymous)
+
+
+
+Control per site:
+
+Example:
+HR site → Only internal sharing
+Project site → Anyone sharing allowed
+
+
+---
+
+8.6 Access Control (Security Core)
+
+Controls:
+
+1. Unmanaged Device Access
+
+Allow full access
+
+Allow web-only, block download
+
+Block full access
+
+
+2. Idle Session Timeout
+
+Automatic logout after inactivity.
+
+3. Network Location Restrictions
+
+Allow access only from:
+
+Company IP range
+
+VPN
+
+Secure network
+
+
+
+---
+
+8.7 Storage Management
+
+Tenant-Level:
+
+Auto-expanding storage
+
+Monitor usage
+
+Storage pool per site
+
+
+Site-Level:
+
+Manual quota
+
+Warning threshold
+
+Versioning storage impact
+
+
+
+---
+
+8.8 Versioning, Check-in/Check-out
+
+Versioning:
+
+Major versions (1.0, 2.0)
+
+Minor versions (1.1, 1.2)
+
+Admin can control:
+
+of versions to keep
+
+Draft visibility
+
+Auto-save
+
+
+
+Check-in/out:
+
+Used for:
+
+Prevent simultaneous edits
+
+Document control
+
+Approval workflows
+
+
+
+---
+
+8.9 Retention Policies
+
+Retention can:
+
+✔ Prevent delete
+✔ Auto-delete after X years
+✔ Keep content even if user deletes
+✔ Apply to:
+
+SharePoint sites
+
+OneDrive
+
+Teams
+
+Exchange
+
+
+Types:
+
+Policy	Purpose
+
+Retention policy	Keep data for X years
+Retention label	Apply to items or libraries
+Record label	Content becomes read-only
+
+
+
+---
+
+8.10 Sensitivity Labels (Security)
+
+Used for:
+
+Classifying confidential content
+
+Encrypting files
+
+Blocking sharing
+
+Restricting download
+
+Watermarking
+
+
+Used with:
+
+SharePoint
+
+OneDrive
+
+Office apps
+
+Teams
+
+Email
+
+
+
+---
+
+8.11 Permissions & Access Management (MOST IMPORTANT)
+
+Default Permission Levels:
+
+Permission	Description
+
+Full Control	Admin
+Edit	Add/edit/delete items
+Contribute	Add/edit items
+Read	View only
+Limited Access	Required for hierarchy
+
+
+Permission Hierarchy:
+
+1. Site Collection Admin
+
+
+2. Site Owner
+
+
+3. Members (Edit)
+
+
+4. Visitors (Read)
+
+
+
+SharePoint Groups:
+
+Owners
+
+Members
+
+Visitors
+
+Custom groups
+
+
+Permission Best Practices:
+
+✔ Use groups, not individuals
+✔ Break inheritance only when needed
+✔ Avoid giving Edit to everyone
+✔ Use “Access Request” feature
+✔ Use “Share” carefully
+✔ Apply labels or DLP for confidential docs
+
+
+---
+
+8.12 Site Design & Site Scripts (Automation)
+
+Used for:
+
+Auto-creating lists
+
+Auto-applying themes
+
+Adding navigation
+
+Adding content types
+
+Running Power Automate flows automatically
+
+
+Used for automated provisioning.
+
+
+---
+
+8.13 Term Store (Managed Metadata)
+
+Features:
+
+Global classification system
+
+Term sets
+
+Hierarchical metadata
+
+Reusable across all sites
+
+
+Used in:
+
+Navigation
+
+Content classification
+
+Search refinement
+
+Enterprise taxonomy
+
+
+
+---
+
+8.14 Search Administration
+
+SharePoint search uses Microsoft Search (modern) or Classic Search.
+
+Search Admin Includes:
+
+Search schema
+
+Managed properties
+
+Crawled properties
+
+Result sources
+
+Custom filters & refiners
+
+Query rules
+
+PnP Modern Search web parts
+
+Hybrid search (on-prem + cloud)
+
+
+
+---
+
+8.15 Migration Tools
+
+Supported tools:
+
+1. SharePoint Migration Tool (SPMT) – Free
+
+
+2. Migration Manager
+
+
+3. Mover.io
+
+
+4. ShareGate (Popular third-party)
+
+
+5. AvePoint
+
+
+6. Metalogix
+
+
+
+Migration types:
+
+File Server → SharePoint
+
+Google Drive → OneDrive
+
+On-prem → SharePoint Online
+
+Tenant to Tenant migration
+
+
+
+---
+
+8.16 Monitoring & Reports
+
+Admin can check:
+
+Usage Reports
+
+Site traffic
+
+User activity
+
+File access patterns
+
+Storage consumption
+
+
+OneDrive Reports
+
+Sync issues
+
+User storage
+
+File activity
+
+
+Security Reports
+
+DLP incidents
+
+Sensitivity label applied
+
+Data exposure attempts
+
+
+Audit Logs
+
+Track:
+
+File access
+
+Sharing
+
+Delete/restore
+
+Login activity
+
+Admin actions
+
+
+
+---
+
+8.17 Backup & Restore in SharePoint Online
+
+SharePoint Online automatically manages backup.
+
+Microsoft handles:
+
+14-day point-in-time restore for OneDrive
+
+93-day recycle bin (Site)
+
+93 + 93 days = 186 days (Two-stage recycle bin)
+
+Geo-redundant replication
+
+Item-level restore
+
+
+Admins control:
+
+Restore files
+
+Restore lists/libraries
+
+Restore site using “Site Restore” (last 30 days)
+
+
+
+---
+
+8.18 Hub Site Administration
+
+Hub Sites allow:
+
+Central navigation
+
+Branding consistency
+
+Cross-site search
+
+Content roll-up
+
+
+Admin actions:
+
+Register Hub
+
+Assign sites to Hub
+
+Lock Hub association
+
+Add hub permissions
+
+
+
+---
+
+8.19 Multi-Geo SharePoint
+
+Used by global organizations.
+
+Benefits:
+
+Store data in specific geographies
+
+Meet GDPR, data residency requirements
+
+Users get closest data center
+
+Regional site creation
+
+
+
+---
+
+8.20 External Sharing Administration
+
+Admin can control:
+
+Tenant Level:
+
+Allow/deny external sharing
+
+Domain allow/block list
+
+Guest expiration
+
+B2B authentication
+
+Limit file access
+
+
+Site Level:
+
+Inherit from tenant
+
+Restrict further if needed
+
+
+File Level:
+
+Link expiration
+
+Password protection
+
+
+
+---
+
+8.21 Content Services in Admin Center
+
+Includes:
+
+Document ID service
+
+Content type gallery
+
+Term store
+
+Information governance
+
+Content processing
+
+Rules and policies
+
+
+
+---
+
+8.22 Compliance & DLP (Data Loss Prevention)
+
+DLP can detect:
+
+Personal data
+
+Financial data
+
+Health information
+
+Confidential files
+
+
+Actions DLP can take: ✔ Block sharing
+✔ Encrypt files
+✔ Alert admin
+✔ Require justification
+✔ Report incident
+
+
+---
+
+8.23 Automation with PowerShell
+
+There are two PowerShell modules:
+
+1. SharePoint Online Management Shell
+
+Used for:
+
+Managing sites
+
+Setting sharing policies
+
+Managing storage
+
+
+Example:
+
+Set-SPOSite -Identity <URL> -LockState NoAccess
+
+2. PnP PowerShell
+
+Used for:
+
+Advanced provisioning
+
+Automation scripts
+
+SPFx deployment
+
+Creating lists, pages, content types
+
+
+Example:
+
+Connect-PnPOnline -Url <site>
+Get-PnPList
+
+
+---
+
+8.24 Governance & Best Practices (Most Asked in Interviews)
+
+Admin Best Practices:
+
+✔ Use least-privilege model
+✔ Enforce MFA
+✔ Use sensitivity labels
+✔ Use DLP for confidential data
+✔ Limit external sharing
+✔ Avoid site sprawl
+✔ Enforce retention
+✔ Review permissions quarterly
+✔ Use hub sites wisely
+✔ Use naming conventions
+✔ Use site creation policies
+✔ Monitor usage regularly
+
+
+---
+
+8.25 Real-Time Admin Scenarios
+
+Scenario 1: Employee left company
+
+Admin must:
+
+Access user’s OneDrive
+
+Transfer files to manager
+
+Reassign ownership in SharePoint
+
+Disable sign-in
+
+Retention policies keep files safe
+
+
+
+---
+
+Scenario 2: User unable to sync files
+
+Steps:
+
+Check OneDrive sync logs
+
+Check file name restrictions
+
+Check network restrictions
+
+Reset sync client
+
+
+
+---
+
+Scenario 3: Too much storage usage
+
+Admin can:
+
+Increase quota
+
+Move sites
+
+Archive old content
+
+Apply retention
+
+
+
+---
+
+Scenario 4: Sensitive files leaked
+
+Admin should:
+
+Check audit logs
+
+Apply DLP
+
+Lock site
+
+Revoke sharing links
+
+
+
+---
+
+🎉 PART 8 COMPLETED
+
