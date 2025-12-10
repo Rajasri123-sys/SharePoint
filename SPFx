@@ -1,0 +1,107 @@
+SharePoint Framework
+The SharePoint Framework (SPFx) is a page and web part model that provides full support for client-side SharePoint development, easy integration with SharePoint data, and extending Microsoft Teams and Microsoft Viva. With the SharePoint Framework, you can use modern web technologies and tools in your preferred development environment to build productive experiences and apps that are responsive and mobile-ready.
+
+Key capabilities of the SharePoint Framework for Microsoft 365 are the following:
+
+Content Driven Applications – SharePoint Framework can be used to build content driven applications for surfacing information easily from Microsoft 365 with Microsoft Graph or to integrate with externally hosted content.
+Automatic Single Sign On – SharePoint Framework components have automatic and seamless SSO included for all platforms they are hosted on. No specific consents needed from Microsoft 365 end users.
+Automatic hosting – SharePoint Framework components can be securely and automatically hosted in SharePoint without additional maintenance or operational costs.
+Industry standard tooling – SharePoint Framework is using standard web stack tooling with node, npm, TypeScript and any JavaScript framework of your preference. You just need standard web skills to succeed without needing any proprietary tooling.
+
+Key features of the SharePoint Framework
+The following are some of the key features included as part of the SPFx:
+It runs in the context of the current user and connection in the browser. There are no iFrames for the customization (JavaScript is embedded directly to the page).
+The controls are rendered in the normal page DOM.
+The controls are responsive and accessible by nature.
+It enables the developer to access the lifecycle in addition to render, load, serialize and deserialize, configuration changes, and more.
+It's framework-agnostic. You can use any JavaScript framework that you like including, but not limited to, React, Handlebars, Knockout, Angular, and Vue.js.
+The developer toolchain is based on popular open-source client development tools such as NPM, TypeScript, Yeoman, webpack, and gulp.
+Performance is reliable.
+End users can use SPFx client-side solutions that are approved by the tenant administrators (or their delegates) on all sites, including self-service team, group, or personal sites.
+SPFx web parts can be added to both classic and modern pages.
+SPFx solutions can be used to extend Microsoft Teams.
+SPFx can be used to extend Microsoft Viva Connections.
+SPFx can be use to extend Outlook and Office 365 app (Office)
+The runtime model improves on the Script Editor web part. It includes a robust client API, an HttpClient object that handles authentication to SharePoint and Microsoft 365, contextual information, easy property definition and configuration, and more.
+
+SharePoint client-side web parts are controls that appear inside a SharePoint page and execute client-side in the browser. They're the building blocks of pages that appear on a SharePoint site.
+You can build client-side web parts using modern client-side development tools and the SharePoint workbench (a development test surface). You can deploy your client-side web parts to both modern pages and classic web part pages in Microsoft 365 tenants.
+
+Use client-side web parts beyond SharePoint
+Client-side web parts are the basic building block to implement other types of customizations in SharePoint, Microsoft Teams, and Microsoft Office clients! For example:
+Client-side web parts can be used to deploy single page apps (SPAs) in SharePoint Online. For more information about using web parts as SPAs, see Using single part app pages in SharePoint Online.
+Client-side web parts can be used to implement tabs in Microsoft Teams. For more information about using web parts in Microsoft Teams, see Building Microsoft Teams Tabs using SharePoint Framework.
+In addition to plain JavaScript projects, you can build web parts with popular web frameworks such as React, Angular, Vue.js, and others. For example, you can use React along with components from Fluent UI to quickly create experiences based on the same components used in Microsoft 365.
+
+Create a new web part project
+Create a new project directory for your project and change your current folder to that directory.
+Create a new project by running the Yeoman SharePoint Generator from within the new directory you created:
+Console
+yo @microsoft/sharepoint
+
+The Yeoman SharePoint Generator will prompt you with a series of questions. For all questions, accept the default options except for the following questions:
+Which type of client-side component to create?: WebPart
+What is your Web part name?: HelloWorld
+Which template would you like to use?: No framework
+At this point, Yeoman creates the project scaffolding (folders & files) and installs the required dependencies by running npm install. This usually takes 1-3 minutes depending on your internet connection.
+
+*NPM may display warnings and error messages during the installation of dependencies while it runs the npm install command. You can safely ignore these log warnings & error messages.
+NPM may display a message about running npm audit at the end of the process. Don't run this command as it will upgrade packages and nested dependencies that may not have been tested by the SharePoint Framework.
+
+Start the local web server & launch the hosted workbench
+Assuming you've installed & trusted developer certificate, execute the following command in the console to build and preview your web part:
+**gulp serve
+This command executes a series of gulp tasks to create and start a local webserver hosting the endpoints localhost:4321 and localhost:5432. It will then open your default browser and load the hosted workbench preview web parts from your local dev environment.
+
+Web part class
+HelloWorldWebPart.ts in the src\webparts\helloworld folder defines the main entry point for the web part. The web part class HelloWorldWebPart extends the BaseClientSideWebPart. Any client-side web part should extend the BaseClientSideWebPart class to be defined as a valid web part.
+BaseClientSideWebPart implements the minimal functionality that is required to build a web part. This class also provides many parameters to validate and access read-only properties such as displayMode, web part properties, web part context, web part instanceId, the web part domElement, and much more.
+Notice that the web part class is defined to accept a property type IHelloWorldWebPartProps.
+
+The property type is defined as an interface before the HelloWorldWebPart class in the HelloWorldWebPart.ts file.
+TypeScript
+**export interface IHelloWorldWebPartProps {
+  description: string;
+}
+This property definition is used to define custom property types for your web part, which is described in the property pane section later.
+
+Web part render method
+The DOM element where the web part should be rendered is available in the render() method. This method is used to render the web part inside that DOM element. In the HelloWorld web part, the DOM element is set to a DIV.
+
+TypeScript
+**public render(): void {
+  this.domElement.innerHTML = `
+  <section class="${styles.helloWorld} ${!!this.context.sdks.microsoftTeams ? styles.teams : ''}">
+    <div class="${styles.welcome}">
+      <img alt="" src="${this._isDarkTheme ? require('./assets/welcome-dark.png') : require('./assets/welcome-light.png')}" class="${styles.welcomeImage}" />
+      <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
+      <div>${this._environmentMessage}</div>
+      <div>Web part property value: <strong>${escape(this.properties.description)}</strong></div>
+    </div>
+    <div>
+      <h3>Welcome to SharePoint Framework!</h3>
+      <p>
+      The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It's the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling.
+      </p>
+      <h4>Learn more about SPFx development:</h4>
+        <ul class="${styles.links}">
+          <li><a href="https://aka.ms/spfx" target="_blank">SharePoint Framework Overview</a></li>
+          <li><a href="https://aka.ms/spfx-yeoman-graph" target="_blank">Use Microsoft Graph in your solution</a></li>
+          <li><a href="https://aka.ms/spfx-yeoman-teams" target="_blank">Build for Microsoft Teams using SharePoint Framework</a></li>
+          <li><a href="https://aka.ms/spfx-yeoman-viva" target="_blank">Build for Microsoft Viva Connections using SharePoint Framework</a></li>
+          <li><a href="https://aka.ms/spfx-yeoman-store" target="_blank">Publish SharePoint Framework applications to the marketplace</a></li>
+          <li><a href="https://aka.ms/spfx-yeoman-api" target="_blank">SharePoint Framework API reference</a></li>
+          <li><a href="https://aka.ms/m365pnp" target="_blank">Microsoft 365 Developer Community</a></li>
+        </ul>
+    </div>
+  </section>`;
+}
+This model is flexible enough so that web parts can be built in any JavaScript framework and loaded into the DOM element.
+
+Configure the Web part property pane:
+The property pane is defined in the HelloWorldWebPart class. The getPropertyPaneConfiguration property is where you need to define the property pane.
+When the properties are defined, you can access them in your web part by using this.properties.<property-value>, as shown in the render() method:
+TypeScript
+**<div>Web part property value: <strong>${escape(this.properties.description)}</strong></div>
+Notice that we're executing an HTML escape on the property's value to ensure a valid string. To learn more about how to work with the property pane and property pane field types, see Make your SharePoint client-side web part configurable.
+
