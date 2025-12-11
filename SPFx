@@ -244,3 +244,2124 @@ For more information about SharePoint hub sites, see What is a SharePoint hub si
 For more information about creating hub sites, see Create SharePoint hub sites using
 PowerShell.
 
+
+Here are notes from the article SharePoint Framework (SPFx) — “Overview of the SharePoint Framework” on Microsoft Learn — summarised clearly for you. 
+
+
+---
+
+✅ What is SPFx — Overview & Purpose
+
+SPFx is a page and web part model for SharePoint that gives full support for client-side development. 
+
+With SPFx you can build modern SharePoint experiences (web parts, custom UI) using modern web technologies and tools — e.g. Node, npm, TypeScript, and any JavaScript framework you prefer. 
+
+SPFx allows easy integration with SharePoint data (via REST APIs or Microsoft Graph) and also supports extending other Microsoft 365 hosts like Microsoft Teams and Viva Connections. 
+
+SPFx is considered the primary, recommended replacement for the older SharePoint Add-in / app model — that old model is being deprecated. 
+
+
+In short: SPFx lets developers build modern, responsive, secure, cross-platform (browser + mobile + other hosts) SharePoint customizations using web-native tools and frameworks. 
+
+
+---
+
+🌟 Key Capabilities and Advantages of SPFx
+
+According to the docs, SPFx offers the following main benefits: 
+
+Runs in current user context (in-browser): SPFx components execute as part of the page (no iframes), so they run under the current user’s permissions and have full access to DOM and APIs. 
+
+Rendered directly into the page DOM: The web parts / components integrate seamlessly into the modern SharePoint page UI (not isolated frames). 
+
+Responsive & accessible by design: SPFx renders controls that adapt to device size and follow accessibility standards. 
+
+Full lifecycle support: Includes render, load, serialize/deserialize configuration, support for configuration changes, lifecycle hooks, etc. 
+
+Framework-agnostic: You can use React, Angular, Vue, Handlebars, Knockout, or plain JS — whichever you prefer. 
+
+Standard web developer toolchain: Works with npm, TypeScript, Webpack, Gulp, and other open-source tools — so you don’t need proprietary tooling. 
+
+Supports classic and modern pages: SPFx web parts and extensions can be used on both modern SharePoint pages and classic pages. 
+
+Enterprise-ready deployment & hosting: SPFx components can be automatically hosted inside SharePoint, with no extra maintenance, and can be approved by tenant admins to work across all sites (even self-service or personal sites). 
+
+Cross-host support: SPFx is not limited to SharePoint; you can use same SPFx components in Microsoft Teams, Viva Connections, and other Microsoft 365 apps — making your investment reusable across platforms. 
+
+Content-driven applications: SPFx is well-suited for building content-driven apps that surface information from SharePoint, Microsoft Graph or external services. 
+
+Automatic Single Sign-On (SSO): SPFx components automatically handle authentication / SSO across Microsoft 365 — no need to re-authenticate for these hosts. 
+
+
+Overall — SPFx gives a modern, consistent, secure, and future-proof way to build SharePoint + Microsoft 365 customizations without the complications and restrictions of old models. 
+
+
+---
+
+🎯 What SPFx Replaces / Why It Matters (vs Legacy Models)
+
+The older SharePoint add-in (app) model is being deprecated — but that does not affect SPFx. SPFx remains fully supported and is the recommended way forward. 
+
+Because SPFx is client-side and uses standard web tooling, you don’t need to install or maintain server-side SharePoint on your local dev machine. That reduces complexity compared to “full trust” or “sandboxed” earlier models. 
+
+It lowers barrier to entry — developers familiar with web development (HTML, JS/TS, React) can start building SPFx solutions without heavy .NET or SharePoint-server knowledge. 
+
+
+In enterprise context, SPFx enables a standardized, maintainable, and scalable way to build custom SPUI — with governance, packaging, deployment, and cross-site reuse. 
+
+
+---
+
+🧰 What Tools & Libraries SPFx Uses (Development Stack)
+
+From the docs: 
+
+TypeScript — SPFx encourages typed JavaScript via TypeScript; most of its tooling is built with TS. 
+
+npm — to manage packages / dependencies (similar to NuGet but for JS) 
+
+Yeoman Generator — scaffolds SPFx projects (web parts or extensions) via command-line templates. 
+
+Build toolchain — SPFx uses open-source build tools (Webpack or others, plus optionally Gulp / Heft depending on version) for compiling, bundling, packaging. 
+
+Choice of web framework — React is widely used and recommended (by Microsoft and community), but SPFx does not force a framework — you may use React, Angular, Vue, Knockout, plain JS, etc. 
+
+Any code editor — because it’s all client-side and standard web tooling, you can code in cross-platform editors (e.g. Visual Studio Code), on Windows, macOS, or Linux. 
+
+Integration with SharePoint REST APIs / Microsoft Graph — for data access, list operations, and other Microsoft 365 data interactions. 
+
+
+So essentially, SPFx brings the world of contemporary front-end / web-app development to SharePoint customization.
+
+
+---
+
+🧑‍💻 Runtime Model & How SPFx Works (what happens under the hood)
+
+SPFx components run in the browser context of the current user (not iframes), loaded directly into the page DOM. 
+
+Components have access to SharePoint context, APIs, authentication, etc. via SPFx APIs (context object, HTTP clients). This allows secure and permission-aware data access. 
+
+Because it’s client-side, there is no server-side code or farm solutions needed — you only build front-end artifacts that run in browser, lowering maintenance overhead and increasing portability. 
+
+
+This model is a major shift from older SharePoint development styles (server-side, sandboxed, farm solutions). SPFx aligns with modern web development while remaining tightly integrated with SharePoint / Microsoft 365.
+
+
+---
+
+🏢 Supported Environments & Compatibility
+
+SPFx is fully supported on SharePoint Online — all published SPFx versions (and betas) are available there. 
+
+SPFx also supports certain on-premises SharePoint versions (for example, older SP Servers with feature-packs) — though capabilities may vary depending on version. 
+
+Because SPFx is browser-based and uses standard web stacks, the development environment is cross-platform (Windows, macOS, Linux) — you are not locked to Windows + Visual Studio. 
+
+
+That cross-platform support — both for dev and hosting — is a big advantage, especially for cloud-first, distributed teams.
+
+
+---
+
+⚠️ Important Best Practices & Warnings (from docs)
+
+The SPFx guidelines explicitly warn: “The SharePoint page HTML DOM is not an API.” You should not rely on SharePoint’s internal DOM structure or CSS — these may change at any time. Instead, use SPFx’s provided APIs for stable, supported customizations. 
+
+Only documented / supported scenarios are guaranteed to work — anything outside documentation may break unexpectedly. 
+
+For maintainability and supportability in enterprise environments, SPFx encourages using its standardized packaging, deployment, and governance model (App Catalog, proper versioning, approved assets, etc.) rather than ad-hoc JS embedding. 
+
+
+
+---
+
+🔎 Summary — Why SPFx Matters & When to Use It
+
+SPFx represents the modern, officially supported way to build custom UI and functionality for SharePoint / Microsoft 365. It:
+
+Uses standard web technologies and developer tools — lowering entry barrier and aligning with modern web dev practices.
+
+Runs in-browser with user context — making customizations secure, responsive, and integrated.
+
+Supports multiple hosts (SharePoint, Teams, Viva, Office apps) — letting you reuse components across Microsoft 365.
+
+Works on cloud and (to some extent) on-premises environments — offering flexibility.
+
+Provides a consistent, maintainable, and future-proof model — in contrast to older, deprecated SharePoint customizations.
+
+
+
+Here’s a full architecture diagram + explanation of SharePoint Framework (SPFx) — how it works under the hood, its layers, execution flow, and components. Use this to get a clear “big-picture” view of SPFx.
+
+
+---
+
+🧱 SPFx Architecture — Layers & Core Components
+
+SPFx architecture can be viewed as a stack of layers — from development to runtime, deployment to execution. Here's a breakdown:
+
+1. Development & Toolchain Layer
+
+SPFx is built using standard web-dev tooling: Node.js, npm, TypeScript, webpack (or built-in bundler), Gulp or newer toolchain (depending on SPFx version). 
+
+Project scaffolding is automated by Yeoman (via @microsoft/generator-sharepoint) — when you run yo @microsoft/sharepoint, it creates boilerplate folder structure, config files, dependencies, and project scaffolding. 
+
+Build tasks (bundle, minify, compile TypeScript/SCSS, packaging) are handled by webpack + Gulp (in legacy toolchain) or by newer toolchain (Heft) for recent SPFx versions. 
+
+The output after build/packaging is a deployable package (typically a .sppkg) plus bundled/minified JS/CSS and manifest files ready for SharePoint hosting or CDN hosting. 
+
+
+In short: SPFx allows developers to use modern front-end toolchains and workflows — like for any web application — even though the target platform is SharePoint.
+
+
+---
+
+2. SPFx Runtime Layer (Client-side Execution Layer)
+
+Once deployed to SharePoint (or Teams/Viva etc.), SPFx components execute in the browser. Key aspects:
+
+SPFx components (web parts or extensions) run in user’s browser context, under the current user’s permissions. 
+
+They are rendered directly into the page DOM (not via iFrames) — enabling them to blend seamlessly with page UI, follow theme, respond to layout, and interact with page context. 
+
+SPFx provides a context object (this.context) to every component, giving metadata about site, user, environment, and also providing API clients (HTTP / REST / Graph) for data access. 
+
+SPFx supports web parts (UI components/pages), extensions (UI/customization hooks — header/footer injection, custom fields, command sets), and library components (shared/common code usable across parts). 
+
+
+Thus SPFx runtime layer bridges SharePoint’s backend data & permissions with modern JS-based UI delivered via the browser.
+
+
+---
+
+3. Data / API Communication Layer
+
+When SPFx components need data (lists, files, user info, external services):
+
+SPFx provides built-in clients like SPHttpClient for calling SharePoint REST APIs under current user context — handling authentication/authorization automatically. 
+
+For Microsoft 365 data beyond SharePoint (mail, users, Graph API resources), SPFx supports calling Microsoft Graph clients or custom AAD-secured APIs. 
+
+You can also use community libraries (like PnPjs) to simplify REST/Graph calls — making code cleaner and more maintainable. 
+
+
+This layer ensures SPFx components can integrate with SharePoint data, Microsoft 365 services, or your own backend seamlessly.
+
+
+---
+
+4. Packaging & Deployment Layer
+
+After development and build:
+
+The build output (bundled JS/CSS + manifest + assets) is packaged into .sppkg via gulp package-solution --ship (or equivalent) for SPFx. 
+
+.sppkg is uploaded to the SharePoint App Catalog (tenant or site) — once approved/installed it becomes available to add to sites/pages. 
+
+SPFx supports automatic hosting of build artefacts (assets, scripts) in SharePoint’s infrastructure or external CDN — meaning no separate web server required. 
+
+The same package can work across multiple hosts — SharePoint pages (classic & modern), Microsoft Teams, Viva Connections, etc. 
+
+
+This layered packaging/deployment approach ensures enterprise-ready deployment, governance, reuse, and maintainability.
+
+
+---
+
+🔄 Full Flow: From Developer Code → User Browser
+
+1. Scaffold & Code — Developer scaffolds project (Web Part / Extension / Library) using Yeoman generator. Code using TypeScript + React (or other JS framework), referencing SPFx APIs.
+
+
+2. Build & Bundle — Using webpack/Gulp or new toolchain, TypeScript + CSS + assets → bundled/minified JS/CSS + manifest + assets folder.
+
+
+3. Package — gulp package-solution --ship → .sppkg file is generated.
+
+
+4. Deploy — Upload to SharePoint App Catalog; optionally enable for all sites (tenant-wide).
+
+
+5. Add to Page / Host — Add web part/extension to site page, Teams tab or Viva.
+
+
+6. Runtime Execution — In user’s browser: SPFx runtime initializes, context injected, component renders, makes REST/Graph/API calls, displays UI in DOM.
+
+
+7. Interaction & Data Access — Web part interacts with SharePoint data (lists, libraries), Microsoft 365 services or custom APIs; all under user permissions and authentication context.
+
+
+
+This flow ensures SPFx delivers modern client-side UI in SharePoint/Microsoft 365 in a robust, maintainable and supported way.
+
+
+---
+
+🧭 Summary Diagram (In Words)
+
+[ Developer ] 
+     │  (write TS/React)  
+     ▼  
+[ SPFx Toolchain (Yeoman) ] — scaffold project  
+     │  
+     ▼  
+[ Build & Bundle (webpack / gulp / heft) ]  
+     │  
+     ▼  
+[ Package (.sppkg) ]  
+     │  
+     ▼  
+[ SharePoint App Catalog ]  
+     │  (deploy / approve)  
+     ▼  
+[ SharePoint / Teams / Viva Host ]  
+     │  
+     ▼  
+[ User’s Browser ] → SPFx runtime loads component → inject context → renders UI → REST/Graph calls → data displayed
+
+
+---
+
+✅ Why This Architecture Matters
+
+Lets web developers (JS/TypeScript) build SharePoint customizations — no need for server-side .NET code.
+
+Provides safe, supported, maintainable way to extend SharePoint and Microsoft 365 — without hacking DOM or unsupported scripts. 
+
+Enables cross-host reuse (SharePoint pages, Teams, Viva) — maximizing code reuse.
+
+Uses modern web stack — developers get to leverage modern JS ecosystem (npm, React, modules).
+
+Ensures security & permissions — runs under user context, uses proper APIs to enforce auth.
+
+
+
+SPFx — Clear, part-by-part explanations with code
+
+Below are the core SPFx concepts split into digestible parts. Each part explains the idea, why it matters, and includes copy-pasteable code or commands. Pick any section to expand and I’ll add more files or a runnable repo.
+
+
+---
+
+Part 1 — Environment setup (quick, exact steps)
+
+What & why: SPFx projects require Node, Yeoman generator, and Gulp. Use nvm to install the Node version compatible with your SPFx version (commonly Node 18.x for modern SPFx releases).
+
+Commands (Windows/macOS/Linux):
+
+# Install nvm (macOS/Linux) or nvm-windows on Windows, then:
+nvm install 18
+nvm use 18
+
+# Install global tools
+npm install -g yo gulp @microsoft/generator-sharepoint
+
+# Optionally install PnP CLI
+npm install -g @pnp/cli-microsoft365
+
+Trust dev certificate (first time only):
+
+gulp trust-dev-cert
+
+
+---
+
+Part 2 — Scaffold a new SPFx project
+
+What & why: yo @microsoft/sharepoint scaffolds all files, config, and sample web part for you.
+
+Command & typical prompts:
+
+yo @microsoft/sharepoint
+# Prompts you choose:
+# - solution name
+# - target (SharePoint Online only/latest)
+# - component type (WebPart / Extension)
+# - framework (React / No framework / Others)
+# - deploy to tenant or not
+
+After scaffolding:
+
+npm install
+gulp serve          # open local workbench (http://localhost:5432/temp/workbench.html)
+
+
+---
+
+Part 3 — Hello World Web Part (full minimal example)
+
+What & why: Shows web part class + React component. WebPart passes context & properties to React root.
+
+src/webparts/hello/HelloWebPart.ts:
+
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import Hello from './components/Hello';
+import { IHelloProps } from './components/IHelloProps';
+
+export interface IHelloWebPartProps {
+  description: string;
+}
+
+export default class HelloWebPart extends BaseClientSideWebPart<IHelloWebPartProps> {
+  public render(): void {
+    const element: React.ReactElement<IHelloProps> = React.createElement(
+      Hello,
+      {
+        description: this.properties.description,
+        context: this.context
+      } as IHelloProps
+    );
+    ReactDom.render(element, this.domElement);
+  }
+
+  protected onDispose(): void {
+    ReactDom.unmountComponentAtNode(this.domElement);
+  }
+}
+
+src/webparts/hello/components/IHelloProps.ts:
+
+import { WebPartContext } from '@microsoft/sp-webpart-base';
+
+export interface IHelloProps {
+  description: string;
+  context: WebPartContext;
+}
+
+src/webparts/hello/components/Hello.tsx:
+
+import * as React from 'react';
+import { IHelloProps } from './IHelloProps';
+
+const Hello: React.FC<IHelloProps> = ({ description, context }) => {
+  return (
+    <div>
+      <h2>Hello SPFx 👋</h2>
+      <p>{description}</p>
+      <div>User: {context.pageContext.user.displayName}</div>
+      <div>Site: {context.pageContext.web.title}</div>
+    </div>
+  );
+};
+
+export default Hello;
+
+Hello.module.scss (optional SCSS):
+
+.container { padding: 8px; font-family: "Segoe UI", Arial; }
+
+Run locally: gulp serve → open local workbench.
+
+
+---
+
+Part 4 — Property Pane (configure webpart settings)
+
+What & why: Lets page authors configure web part properties. Use getPropertyPaneConfiguration() in the web part class.
+
+Example (add to HelloWebPart.ts):
+
+import {
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField,
+  PropertyPaneToggle
+} from '@microsoft/sp-property-pane';
+
+protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+  return {
+    pages: [
+      {
+        header: { description: "Settings" },
+        groups: [
+          {
+            groupFields: [
+              PropertyPaneTextField('description', { label: 'Description' }),
+              PropertyPaneToggle('showUser', { label: 'Show current user?' })
+            ]
+          }
+        ]
+      }
+    ]
+  };
+}
+
+Access this.properties.showUser inside your React props to conditionally render UI.
+
+
+---
+
+Part 5 — Calling SharePoint REST (spHttpClient) & PnPJS
+
+What & why: Use spHttpClient for REST calls. PnPJS simplifies calls and is recommended for complex logic.
+
+spHttpClient example (in web part or component):
+
+const url = `${this.context.pageContext.web.absoluteUrl}/_api/web/lists/getByTitle('MyList')/items?$select=Id,Title`;
+const resp = await this.context.spHttpClient.get(url, SPHttpClient.configurations.v1);
+const data = await resp.json();
+console.log(data.value);
+
+PnPJS setup (recommended)
+
+1. Install:
+
+
+
+npm install @pnp/sp @pnp/common --save
+
+2. Setup in onInit() of web part:
+
+
+
+import { sp } from "@pnp/sp/presets/all";
+
+protected onInit(): Promise<void> {
+  return super.onInit().then(_ => {
+    sp.setup({ spfxContext: this.context });
+  });
+}
+
+3. Use PnPJS in components:
+
+
+
+const items = await sp.web.lists.getByTitle('MyList').items.select('Id','Title').top(100).get();
+
+
+---
+
+Part 6 — React patterns: hooks, async data, error boundaries
+
+Use hooks for data loading and cleanup. Example in a component:
+
+import React, { useState, useEffect } from 'react';
+import { sp } from "@pnp/sp/presets/all";
+
+const ListViewer: React.FC<{listName:string}> = ({ listName }) => {
+  const [items, setItems] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    let isMounted = true;
+    sp.web.lists.getByTitle(listName).items.top(50).get().then(data => {
+      if (isMounted) setItems(data);
+    }).catch(err => console.error(err)).finally(() => isMounted && setLoading(false));
+    return () => { isMounted = false; };
+  }, [listName]);
+
+  if (loading) return <div>Loading...</div>;
+  return <ul>{items.map(i => <li key={i.Id}>{i.Title}</li>)}</ul>;
+};
+
+ErrorBoundary (class component):
+
+class ErrorBoundary extends React.Component<any, {hasError:boolean}> {
+  constructor(props){ super(props); this.state = {hasError:false}; }
+  static getDerivedStateFromError(){ return {hasError:true}; }
+  componentDidCatch(error, info){ console.error(error, info); }
+  render(){ return this.state.hasError ? <div>Something went wrong</div> : this.props.children; }
+}
+
+Wrap your root with <ErrorBoundary> to catch runtime errors.
+
+
+---
+
+Part 7 — Application Customizer (extension) — inject header/footer
+
+What & why: Inject content into page placeholders. Useful for banners, cookie notices, global nav.
+
+Scaffold extension with yo @microsoft/sharepoint (choose Extension → Application Customizer).
+
+src/extensions/header/HeaderApplicationCustomizer.ts:
+
+import { BaseApplicationCustomizer, PlaceholderContent, PlaceholderName } from '@microsoft/sp-application-base';
+import { escape } from '@microsoft/sp-lodash-subset';
+
+export interface IHeaderProperties { text?: string; }
+
+export default class HeaderApplicationCustomizer extends BaseApplicationCustomizer<IHeaderProperties> {
+  private _topPlaceholder: PlaceholderContent | undefined;
+
+  public onInit(): Promise<void> {
+    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceholders);
+    return Promise.resolve();
+  }
+
+  private _renderPlaceholders = (): void => {
+    if (!this._topPlaceholder) {
+      this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
+    }
+    if (this._topPlaceholder) {
+      this._topPlaceholder.domElement.innerHTML = `<div style="background:#0078d4;color:white;padding:8px;">${escape(this.properties.text || 'Welcome')}</div>`;
+    }
+  }
+}
+
+Deploy via App Catalog and the extension will run globally on pages (or where registered).
+
+
+---
+
+Part 8 — Field Customizer (outline)
+
+What & why: Customize how a column renders in a list view (e.g., badges, progress bars, charts).
+
+Key methods to implement in the scaffolded field customizer:
+
+public onInit(): Promise<void> { /* setup */ }
+public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
+  const { cellDiv, fieldValue } = event;
+  cellDiv.innerHTML = `<div class="my-badge">${fieldValue}</div>`;
+}
+public onDisposeCell(event: IFieldCustomizerCellEventParameters): void { /* cleanup */ }
+
+Register the Field Customizer on the list/field via feature xml or script.
+
+
+---
+
+Part 9 — ListView Command Set (toolbar actions)
+
+What & why: Add custom actions (buttons) in list toolbar or item context menu.
+
+Implement onExecute in the scaffold:
+
+import { BaseListViewCommandSet } from '@microsoft/sp-listview-extensibility';
+
+export default class MyCommandSet extends BaseListViewCommandSet<{}> {
+  public onExecute(event) {
+    switch(event.itemId) {
+      case 'COMMAND_1':
+        const selected = event.selectedRows.map(r => r.getValueByName('ID'));
+        alert('Selected IDs: ' + selected.join(','));
+        break;
+    }
+  }
+}
+
+commandSet.manifest.json defines commands and their ids.
+
+
+---
+
+Part 10 — Packaging & Deployment (commands + manifest notes)
+
+Build & package for production:
+
+gulp bundle --ship
+gulp package-solution --ship
+# sharepoint/solution/<your>.sppkg will be created
+
+Deploy steps:
+
+1. Upload .sppkg to Tenant App Catalog → Apps for SharePoint.
+
+
+2. In App Catalog, optionally check Make this solution available to all sites (tenant-wide).
+
+
+3. Add App from Site Contents → Add the app and then add the web part to a page.
+
+
+
+Note: Ensure write-manifests.json or config.json points to correct CDN URLs for production assets (or host assets in the App Catalog).
+
+
+---
+
+Part 11 — Calling AAD-protected API (AadHttpClient)
+
+What & why: Call custom back-end APIs protected by Azure AD using delegated auth.
+
+Example usage from web part:
+
+const client = await this.context.aadHttpClientFactory.getClient('api://<your-api-client-id>');
+const resp = await client.get('https://yourapi.azurewebsites.net/api/data', AadHttpClient.configurations.v1);
+const json = await resp.json();
+
+Setup required:
+
+Register AAD app for the API and configure scopes.
+
+In package-solution.json add required resource/scopes under webApiPermissionRequests.
+
+Tenant admin must approve the requested permissions.
+
+
+
+---
+
+Part 12 — Localization (i18n)
+
+Files: src/webparts/<wp>/loc/en-us.js (generated by scaffold)
+
+loc/en-us.js:
+
+define([], function() {
+  return {
+    "PropertyPaneDescription": "Settings",
+    "TitleFieldLabel": "Title"
+  }
+});
+
+Use in code:
+
+import * as strings from 'HelloWebPartStrings';
+console.log(strings.PropertyPaneDescription);
+
+Add other language files (fr-fr.js) to the loc folder and update package-solution.json if needed.
+
+
+---
+
+Part 13 — Dynamic Data (provider / consumer pattern)
+
+Provider web part (exposes data):
+
+import { IDynamicDataPropertyDefinition } from '@microsoft/sp-dynamic-data';
+
+protected getPropertyDefinitions(): IDynamicDataPropertyDefinition[] {
+  return [{ id: 'selectedItem', title: 'Selected item' }];
+}
+protected getPropertyValue(propertyId: string) {
+  if (propertyId === 'selectedItem') return this._selectedItem;
+  return null;
+}
+
+Consumer web part (consumes data):
+
+this.context.dynamicDataProvider.registerAvailableSourcesChanged(this._onSourcesChanged);
+// then bind to source property and listen for updates
+
+Dynamic data allows web parts to talk to each other (e.g., filter web part sends selected value → consumer updates list).
+
+
+---
+
+Part 14 — Unit testing (Jest) for React components
+
+Install testing libs:
+
+npm install --save-dev jest @types/jest ts-jest react-test-renderer @testing-library/react
+
+Sample test Hello.test.tsx:
+
+import React from 'react';
+import { render } from '@testing-library/react';
+import Hello from './Hello';
+
+test('renders description', () => {
+  const { getByText } = render(<Hello description="Test description" context={{} as any} />);
+  expect(getByText(/Test description/i)).toBeTruthy();
+});
+
+Add test script to package.json:
+
+"scripts": { "test": "jest" }
+
+Run: npm test.
+
+
+---
+
+Part 15 — CI/CD (GitHub Actions minimal workflow)
+
+.github/workflows/spfx-build.yml
+
+name: SPFx build & package
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install
+        run: npm ci
+      - name: Build & Package
+        run: |
+          npm run build
+          gulp bundle --ship
+          gulp package-solution --ship
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sppkg
+          path: sharepoint/solution/*.sppkg
+
+For automated deployment to App Catalog, use PnP PowerShell or PnP REST API with a service principal (securely stored in GitHub Secrets).
+
+
+---
+
+Part 16 — Troubleshooting common problems
+
+Dev certificate errors: gulp trust-dev-cert (revoke: gulp untrust-dev-cert) and ensure browser trusts it.
+
+Node version mismatch: use nvm use <version> matching SPFx requirement.
+
+Manifest 404 on workbench: ensure gulp serve running and write-manifests.json points to https://localhost:4321.
+
+Graph permission denied: check package-solution.json webApiPermissionRequests and tenant admin granted consent.
+
+Bundle huge size: mark large libs as externals in config/config.json and load from CDN.
+
+“Cannot find module” after upgrade: delete node_modules and run npm ci.
+
+
+
+---
+
+Part 17 — Production best practices (short list)
+
+Use strict TypeScript ("strict": true), linting, and Prettier.
+
+Keep web part responsibilities small; separate data access into services.
+
+Use PnPJS for cleaner SharePoint calls.
+
+Lazy-load heavy components (import()), mark React and Fluent UI as externals if tenant provides them.
+
+Sanitize and escape user data in DOM to avoid XSS.
+
+Do not store secrets client-side. Use AAD-protected APIs or Azure Functions for sensitive operations.
+
+Add telemetry (Application Insights) server-side or anonymized client telemetry.
+
+
+
+---
+
+Part 18 — Quick reference: important code snippets
+
+Unmount React on dispose:
+
+protected onDispose(): void {
+  ReactDom.unmountComponentAtNode(this.domElement);
+}
+
+Update a list item (REST):
+
+const url = `${webUrl}/_api/web/lists/getByTitle('MyList')/items(${id})`;
+await this.context.spHttpClient.post(url, SPHttpClient.configurations.v1, {
+  headers: { 'Content-Type':'application/json;odata=verbose', 'IF-MATCH': '*' , 'X-HTTP-Method':'MERGE' },
+  body: JSON.stringify({ Title: 'New' })
+});
+
+Get current user (Graph):
+
+const client = await this.context.msGraphClientFactory.getClient();
+const me = await client.api('/me').select('displayName,mail').get();
+
+
+---
+
+
+SPFx — Complete, part-wise master guide (detailed explanations + key code snippets)
+
+Below is a single, structured, part-wise reference that covers every major SPFx concept you’ll need — from setup and core architecture to advanced topics (security, CI/CD, telemetry, performance, testing). Each part contains: what it is, why it matters, how to do it, and copy-paste code where appropriate. If you want any part expanded to a runnable repo or full file set, say which part and I’ll produce it.
+
+
+---
+
+Part 1 — What is SPFx (Short Definition + Context)
+
+What: SharePoint Framework (SPFx) is a Microsoft-supported client-side development model for building web parts, UI customizations (extensions), and reusable libraries that run inside modern SharePoint pages (and can be reused in Teams/Viva).
+Why it matters: Modern, supported, runs in browser under current user’s context (SSO/permissions), uses standard web toolchain (TypeScript, npm, Webpack), and replaces older server-side heavy patterns.
+Key guarantee: Don’t manipulate internal SharePoint DOM/CSS — use SPFx APIs.
+
+
+---
+
+Part 2 — High-level Architecture (Layers & Flow)
+
+Layers:
+
+1. Dev/toolchain — Yeoman, Node, npm, TypeScript, Webpack/Gulp/Heft.
+
+
+2. Project artifacts — TypeScript/React code → compiled → bundles + manifest (.sppkg).
+
+
+3. Deployment — Upload .sppkg to SharePoint App Catalog (tenant/site); assets hosted in SharePoint or CDN.
+
+
+4. Runtime — Browser loads bundle, SPFx runtime provides context (pageContext, http clients), component renders into DOM.
+Flow: Scaffold → dev (gulp serve) → bundle (--ship) → package → upload → add to page → runtime execution.
+
+
+
+
+---
+
+Part 3 — Toolchain & Environment Setup (exact steps)
+
+Install Node (use nvm):
+
+# macOS/Linux
+nvm install 18
+nvm use 18
+
+# Windows: use nvm-windows installer, then:
+nvm install 18.16.0
+nvm use 18.16.0
+
+Global tools:
+
+npm i -g yo gulp @microsoft/generator-sharepoint
+npm i -g @pnp/cli-microsoft365   # optional helpful tool
+
+First time dev cert:
+
+gulp trust-dev-cert
+
+Validate: node -v, npm -v, yo --version.
+
+
+---
+
+Part 4 — Scaffold a Project
+
+yo @microsoft/sharepoint
+# Choose: solution name, SharePoint Online (latest), Web part / Extension / Library, React or No framework, deploy to tenant? etc.
+npm install
+gulp serve
+
+Local workbench: https://localhost:4321/temp/workbench.html or SharePoint workbench: https://<tenant>.sharepoint.com/_layouts/15/workbench.aspx.
+
+
+---
+
+Part 5 — Project Structure (important files)
+
+src/ — source code (webparts/, extensions/, common/).
+
+config/ — build and serve configs (config.json, write-manifests.json).
+
+sharepoint/solution/<name>.sppkg — packaged output.
+
+package-solution.json — solution metadata (version, features, webApiPermissionRequests).
+
+loc/ — localization files.
+
+gulpfile.js, tsconfig.json, package.json.
+
+
+
+---
+
+Part 6 — Hello World Web Part (full minimal example)
+
+src/webparts/hello/HelloWebPart.ts
+
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import Hello from './components/Hello';
+import { IHelloProps } from './components/IHelloProps';
+
+export interface IHelloWebPartProps { description: string; }
+
+export default class HelloWebPart extends BaseClientSideWebPart<IHelloWebPartProps> {
+  public render(): void {
+    const elem: React.ReactElement<IHelloProps> = React.createElement(Hello, { description:this.properties.description, context:this.context });
+    ReactDom.render(elem, this.domElement);
+  }
+  protected onDispose(): void { ReactDom.unmountComponentAtNode(this.domElement); }
+}
+
+src/webparts/hello/components/Hello.tsx
+
+import * as React from 'react';
+import { IHelloProps } from './IHelloProps';
+
+const Hello: React.FC<IHelloProps> = ({description, context}) => (
+  <div>
+    <h3>Hello SPFx</h3>
+    <p>{description}</p>
+    <div>Site: {context.pageContext.web.title}</div>
+    <div>User: {context.pageContext.user.displayName}</div>
+  </div>
+);
+export default Hello;
+
+
+---
+
+Part 7 — React Patterns in SPFx
+
+Use functional components + hooks (useState, useEffect).
+
+Create service modules for API calls to keep web part thin.
+
+Use ErrorBoundary class component to catch render errors.
+
+Custom hooks (e.g., useListItems(listName)) promote reuse.
+
+
+Example: fetch list items with useEffect + PnPJS:
+
+useEffect(() => {
+  let mounted=true;
+  sp.web.lists.getByTitle(listName).items.top(100).get().then(res => mounted && setItems(res));
+  return () => { mounted=false; };
+}, [listName]);
+
+
+---
+
+Part 8 — Property Pane (authoring UI)
+
+Implement getPropertyPaneConfiguration() in web part:
+
+protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+  return { pages:[{ header:{description:'Settings'}, groups:[{ groupFields:[
+    PropertyPaneTextField('description',{label:'Title'}),
+    PropertyPaneToggle('showUser',{label:'Show user?'})
+  ]}]}] };
+}
+
+Use this.properties to pass values into React props.
+
+
+---
+
+Part 9 — SPFx Extensions (detailed)
+
+Application Customizer
+
+Inject content into placeholders (Top/Bottom).
+
+Key APIs: this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top).
+
+
+Example snippet:
+
+this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceholders);
+private _renderPlaceholders(): void {
+  const top = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
+  if(top) top.domElement.innerHTML = `<div>Banner</div>`;
+}
+
+Field Customizer
+
+Override rendering for a list column in view. Implement onRenderCell & onDisposeCell.
+
+
+ListView Command Set
+
+Add toolbar/context menu commands. Implement onExecute(event) to handle actions.
+
+
+
+---
+
+Part 10 — Data Access: spHttpClient, msGraphClient, AadHttpClient, PnPJS
+
+spHttpClient — SharePoint REST
+
+const resp = await this.context.spHttpClient.get(`${this.context.pageContext.web.absoluteUrl}/_api/web/lists/getByTitle('MyList')/items`, SPHttpClient.configurations.v1);
+const json = await resp.json();
+
+msGraphClient — Microsoft Graph
+
+const graphClient = await this.context.msGraphClientFactory.getClient();
+const me = await graphClient.api('/me').select('displayName,mail').get();
+
+AadHttpClient — AAD-protected custom APIs
+
+const client = await this.context.aadHttpClientFactory.getClient('api://<app-id>');
+const r = await client.get('https://api/...', AadHttpClient.configurations.v1);
+
+PnPJS (recommended)
+
+Setup:
+
+import { sp } from '@pnp/sp/presets/all';
+protected onInit(){ return super.onInit().then(()=> sp.setup({ spfxContext: this.context })); }
+
+Usage:
+
+const items = await sp.web.lists.getByTitle('MyList').items.select('Id','Title').get();
+
+
+---
+
+Part 11 — Dynamic Data (web parts talking to each other)
+
+Implement provider (exposes property definitions/values) via getPropertyDefinitions() / getPropertyValue().
+
+Consumers register to a dynamic data source and react to changes. Useful for filters, context providers.
+
+
+
+---
+
+Part 12 — Localization (i18n)
+
+Use loc folder files (en-us.js, fr-fr.js) and strings.<key> imports.
+
+Avoid hardcoding labels/strings — always use resource files for user-facing text.
+
+
+
+---
+
+Part 13 — Asset Management & Bundling
+
+Use config/config.json to mark externals. Heavy libs (React, Fluent UI) can be externalized and loaded via CDN.
+
+write-manifests.json determines debug URLs. For production, set cdnBasePath to your CDN/App Catalog CDN.
+
+Use lazy/dynamic import() for heavy modules.
+
+
+
+---
+
+Part 14 — Packaging & Deployment
+
+Build & package:
+
+gulp bundle --ship
+gulp package-solution --ship
+
+Upload sharepoint/solution/<pkg>.sppkg to App Catalog. Optionally enable tenant-wide deployment. Then add app to site (Site Contents) and place web part.
+
+
+---
+
+Part 15 — Permissions & Security
+
+For Graph/custom API scopes: add webApiPermissionRequests in package-solution.json and request tenant admin consent.
+
+Never embed secrets in client code. Use server components (Azure Functions) or AAD-secured APIs.
+
+SPFx runs under current user; use proper permission checks on server side when sensitive operations are needed.
+
+
+
+---
+
+Part 16 — Performance Optimization
+
+Externalize and CDN-host large libs.
+
+Code-split (dynamic imports) and lazy-load heavy features.
+
+Cache API responses (sessionStorage/indexedDB) where appropriate.
+
+Avoid frequent re-renders: memoize components, use useCallback/useMemo.
+
+Analyze bundle with gulp bundle --ship then inspect temp output.
+
+
+
+---
+
+Part 17 — Testing
+
+Unit tests: Jest + React Testing Library.
+
+E2E tests: Playwright or Cypress against a dev tenant.
+
+Lint & format: ESLint + Prettier in pre-commit hooks.
+Example Jest test:
+
+
+import { render } from '@testing-library/react';
+test('shows description', ()=> {
+  const { getByText } = render(<Hello description="abc" context={{} as any}/>);
+  expect(getByText(/abc/)).toBeTruthy();
+});
+
+
+---
+
+Part 18 — CI/CD (GitHub Actions / Azure DevOps)
+
+Minimal pipeline steps:
+
+1. Checkout
+
+
+2. Setup Node (version)
+
+
+3. npm ci
+
+
+4. gulp bundle --ship
+
+
+5. gulp package-solution --ship
+
+
+6. Upload .sppkg artifact or use PnP PowerShell to upload to App Catalog using service principal (use secrets).
+
+
+
+Example artifact upload step is in the earlier cheat-sheet; for automated App Catalog upload use PnP PowerShell and a service principal (secure secrets).
+
+
+---
+
+Part 19 — Debugging & Troubleshooting
+
+Dev cert issues: gulp trust-dev-cert / gulp untrust-dev-cert.
+
+Manifest 404: confirm gulp serve running and debug URLs in write-manifests.json.
+
+Node mismatch: nvm use <version>.
+
+Large bundles: check externals and duplicate packages (npm ls react).
+
+Graph errors: check webApiPermissionRequests + tenant admin consent.
+
+
+
+---
+
+Part 20 — Application Insights & Telemetry
+
+For client telemetry, send anonymised events to a backend or use Application Insights server-side proxy. Don’t log PII.
+
+Log errors with contextual properties (web part id, site id, user id hashed) to assist postmortem.
+
+
+
+---
+
+Part 21 — Governance & Best Practices
+
+Use standard packaging and App Catalog process for review.
+
+Use CDN or centralized asset hosting preferred by tenant policies.
+
+Keep package versions controlled (package-solution.json).
+
+Follow TypeScript strict settings; enforce linting and code reviews.
+
+Document feature flags and rollout strategy for tenant-wide deployment.
+
+
+
+---
+
+Part 22 — Common Interview Questions (high-value)
+
+Short list + core answers (prepare to code):
+
+What is SPFx? — client-side, TS/React, runs in browser under user context.
+
+Web part vs Extension? — web part is page component; extension customizes page (header/footer, fields, commands).
+
+How to call Graph? — msGraphClientFactory.getClient().
+
+How to secure secrets? — never client-side; use server API/AAD-protected backends.
+
+How to reduce bundle size? — externals, CDN, code splitting, lazy loading.
+
+How to debug in SharePoint workbench? — run gulp serve, ensure dev cert trusted, use ?loadSPFX=true.
+
+
+
+---
+
+Part 23 — Real Project Patterns (practical tips)
+
+Tile gallery (media + counters): store metadata in list; optimistic UI for likes; use merge updates with IF-MATCH to avoid conflicts.
+
+Dashboard: use DetailsList, CommandBar, PnPJS filters, and server-side paging for large datasets.
+
+Document viewer: fetch file from Graph and render with PDF.js; check permissions via Graph.
+
+
+
+---
+
+
+Below is a complete, beginner-to-advanced React Framework guide, including concepts, examples, and clear explanations.
+If you want this specifically for SPFx + React, tell me and I will customize it.
+
+
+---
+
+🚀 React Framework — Complete Guide (Beginner → Advanced)
+
+Every concept explained clearly + sample code.
+
+
+---
+
+📘 PART 1 — Introduction to React
+
+What is React?
+
+React is a JavaScript library for building UI components using:
+
+Components
+
+State
+
+Props
+
+Virtual DOM
+
+Declarative rendering
+
+
+Why React?
+
+Fast UI updates
+
+Reusable components
+
+Works with APIs easily
+
+Perfect for SPFx, web apps, dashboards, chatbots
+
+
+
+---
+
+📘 PART 2 — React Project Structure
+
+Typical structure:
+
+src
+ ├── components/
+ ├── pages/
+ ├── hooks/
+ ├── services/
+ ├── App.js
+ ├── index.js
+
+
+---
+
+📘 PART 3 — JSX (JavaScript XML)
+
+JSX allows HTML inside JavaScript.
+
+Example:
+
+function Hello() {
+  return <h1>Hello React</h1>;
+}
+
+
+---
+
+📘 PART 4 — Components
+
+React uses two component types:
+
+
+---
+
+1️⃣ Functional Components (Recommended)
+
+function Greeting() {
+  return <h2>Welcome!</h2>;
+}
+export default Greeting;
+
+
+---
+
+2️⃣ Props (Component Inputs)
+
+function Welcome(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+
+<Welcome name="Rajasri" />
+
+
+---
+
+3️⃣ State (Component Memory)
+
+Using useState():
+
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <h3>Count: {count}</h3>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </>
+  );
+}
+
+
+---
+
+📘 PART 5 — React Hooks (Very Important)
+
+Hooks let functional components use state + lifecycle.
+
+
+---
+
+1️⃣ useState
+
+Memory for component variables.
+
+
+---
+
+2️⃣ useEffect (Lifecycle)
+
+Runs on mount, update, or unmount.
+
+Example: call API
+
+import { useEffect, useState } from "react";
+
+function Users() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(r => r.json())
+      .then(data => setUsers(data));
+  }, []); // empty → runs once
+
+  return <div>{JSON.stringify(users)}</div>;
+}
+
+
+---
+
+3️⃣ useContext (Global State)
+
+Used like a mini Redux.
+
+
+---
+
+4️⃣ useReducer (Advanced State Management)
+
+For complex logic.
+
+
+---
+
+5️⃣ useRef (DOM Access + Persistent Values)
+
+Example:
+
+const inputRef = useRef();
+<input ref={inputRef} />
+
+
+---
+
+📘 PART 6 — Conditional Rendering
+
+{isLoggedIn ? <Dashboard /> : <Login />}
+
+
+---
+
+📘 PART 7 — Lists & Keys
+
+const items = ["A", "B", "C"];
+
+<ul>
+  {items.map((item, idx) => <li key={idx}>{item}</li>)}
+</ul>
+
+
+---
+
+📘 PART 8 — Forms Handling
+
+const [name, setName] = useState("");
+
+<form>
+  <input value={name} onChange={(e) => setName(e.target.value)} />
+</form>
+
+
+---
+
+📘 PART 9 — API Integration
+
+Using fetch
+
+fetch("/api/users")
+  .then(res => res.json())
+  .then(data => setUsers(data));
+
+
+---
+
+Using Axios
+
+import axios from "axios";
+axios.get("/api/users").then(res => setUsers(res.data));
+
+
+---
+
+📘 PART 10 — Routing (react-router-dom)
+
+Install:
+
+npm install react-router-dom
+
+Example:
+
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+  </Routes>
+</BrowserRouter>
+
+
+---
+
+📘 PART 11 — State Management (Redux / Context)
+
+Context API (Simplest)
+
+const UserContext = createContext();
+
+<UserContext.Provider value={user}>
+  <App />
+</UserContext.Provider>
+
+
+---
+
+📘 PART 12 — Reusable Components
+
+Button Component Example:
+
+const Button = ({ text, onClick }) => (
+  <button onClick={onClick}>{text}</button>
+);
+
+<Button text="Save" onClick={() => alert("Saved")} />
+
+
+---
+
+📘 PART 13 — Custom Hooks
+
+function useUsers() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/users")
+      .then(r => r.json())
+      .then(setUsers);
+  }, []);
+
+  return users;
+}
+
+
+---
+
+📘 PART 14 — Performance Optimization
+
+React.memo()
+
+useMemo()
+
+useCallback()
+
+Lazy loading
+
+
+Example:
+
+const result = useMemo(() => heavyCalculation(), [input]);
+
+
+---
+
+📘 PART 15 — Error Boundaries
+
+class ErrorBoundary extends React.Component {
+  state = { hasError: false };
+  componentDidCatch() { this.setState({ hasError: true }); }
+  render() { return this.state.hasError ? "Error!" : this.props.children; }
+}
+
+
+---
+
+📘 PART 16 — Styling
+
+CSS Modules:
+
+import styles from "./Button.module.css";
+<button className={styles.primary}>Click</button>
+
+Styled Components
+
+const Blue = styled.button`
+  background: blue;
+`;
+
+
+---
+
+📘 PART 17 — Advanced React
+
+Suspense
+
+Concurrent Rendering
+
+Portals
+
+Fragments
+
+Higher Order Components
+
+Pure Components
+
+
+
+---
+
+📘 PART 18 — React in SPFx
+
+SPFx uses React heavily.
+
+SPFx WebPart → React Component
+
+const element = React.createElement(MyComponent, {
+  context: this.context,
+  title: this.properties.title
+});
+
+
+---
+
+📘 PART 19 — Real-Time Examples You Can Build
+
+I can generate full code for any:
+
+✔ Tile Gallery (Images, Likes, Views, Comments)
+✔ Dashboard
+✔ News App
+✔ Employee Directory
+✔ Chatbot UI
+✔ Adverse Event Reporting UI
+✔ SharePoint List CRUD
+
+
+---
+
+📘 PART 20 — Interview-Level React Questions
+
+Difference between state and props
+
+Virtual DOM
+
+Keys in lists
+
+useState vs useReducer
+
+Why React is fast
+
+Class vs Functional Components
+
+Lifecycle methods vs useEffect
+
+
+
+---
+
+
+Great — here’s a complete, hands-on React + SPFx combined tutorial you can use to build real, production-ready SharePoint web parts that use React. It’s organized as a step-by-step course: environment → scaffold → code patterns → example project (Tile Gallery) → testing → build & CI/CD → deployment & best practices. Each section includes copy-pasteable files and commands so you can run it immediately.
+
+React + SPFx Combined Tutorial — Full Walkthrough
+
+
+---
+
+0. Quick prerequisites (one-liners)
+
+Node (use nvm): recommended Node 18.x for modern SPFx releases.
+
+Yeoman + SPFx generator + Gulp:
+
+
+npm i -g yo gulp @microsoft/generator-sharepoint
+
+Code editor: Visual Studio Code.
+
+Optional: PnP CLI / PnP PowerShell for automation:
+
+
+npm i -g @pnp/cli-microsoft365
+
+
+---
+
+1. Project Setup & Scaffolding
+
+1. Create a folder and scaffold:
+
+
+
+mkdir spfx-react-tile && cd spfx-react-tile
+yo @microsoft/sharepoint
+
+Choose prompts:
+
+Solution name: spfx-react-tile
+
+Target: SharePoint Online only (latest)
+
+Component type: WebPart
+
+Framework: React
+
+Deploy: No (you’ll package later)
+
+
+2. Install dependencies (if generator didn’t):
+
+
+
+npm install
+gulp trust-dev-cert
+
+3. Run local workbench:
+
+
+
+gulp serve
+# open https://localhost:4321/temp/workbench.html
+
+
+---
+
+2. Project Structure (what matters)
+
+spfx-react-tile/
+├─ src/
+│  ├─ webparts/
+│  │  └─ tileGallery/
+│  │     ├─ TileGalleryWebPart.ts
+│  │     ├─ components/
+│  │     │  ├─ TileGallery.tsx
+│  │     │  ├─ TileCard.tsx
+│  │     │  └─ ITileGalleryProps.ts
+│  └─ extensions/ (if any)
+├─ config/
+├─ sharepoint/
+│  └─ solution/*.sppkg
+├─ package.json
+└─ tsconfig.json
+
+
+---
+
+3. SPFx WebPart → React integration (core pattern)
+
+TileGalleryWebPart.ts (key parts):
+
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import TileGallery from './components/TileGallery';
+import { ITileGalleryProps } from './components/ITileGalleryProps';
+import { sp } from "@pnp/sp";
+
+export interface ITileGalleryWebPartProps {
+  title: string;
+  listName: string;
+}
+
+export default class TileGalleryWebPart extends BaseClientSideWebPart<ITileGalleryWebPartProps> {
+  public async onInit(): Promise<void> {
+    await super.onInit();
+    sp.setup({ spfxContext: this.context }); // pnpjs setup
+  }
+
+  public render(): void {
+    const element: React.ReactElement<ITileGalleryProps> = React.createElement(
+      TileGallery,
+      {
+        title: this.properties.title,
+        listName: this.properties.listName,
+        context: this.context
+      } as ITileGalleryProps
+    );
+    ReactDom.render(element, this.domElement);
+  }
+
+  protected onDispose(): void {
+    ReactDom.unmountComponentAtNode(this.domElement);
+  }
+}
+
+Why this pattern: The web part stays thin — it provides context and config; React components hold UI & state.
+
+
+---
+
+4. Core React patterns for SPFx
+
+Use these conventions:
+
+Functional components + hooks (useState, useEffect) — concise and testable.
+
+Service module for data access (separate file TileService.ts) that uses PnPJS or spHttpClient.
+
+Prop typing via interfaces (ITileGalleryProps, ITile).
+
+ErrorBoundary wrapper for React rendering errors.
+
+Lazy load detailed views using React.lazy + Suspense for heavy modules (PDF viewer etc).
+
+Optimistic UI for likes or counters: update UI first, then persist; rollback on error.
+
+
+
+---
+
+5. Example: Tile Gallery — full minimal files
+
+5.1 Data model (SharePoint list schema)
+
+Create a SharePoint list Tiles with fields:
+
+Title (single line)
+
+ImageUrl (single line)
+
+Views (Number)
+
+Likes (Number)
+
+DetailsPageUrl (single line / URL)
+
+Comments (Multiple lines)
+
+
+5.2 ITile.ts
+
+export interface ITile {
+  Id: number;
+  Title: string;
+  ImageUrl: string;
+  Views: number;
+  Likes: number;
+  DetailsPageUrl?: string;
+  Comments?: string;
+}
+
+5.3 ITileGalleryProps.ts
+
+import { WebPartContext } from "@microsoft/sp-webpart-base";
+import { ITile } from './ITile';
+
+export interface ITileGalleryProps {
+  title: string;
+  listName: string;
+  context: WebPartContext;
+}
+
+5.4 TileService.ts (PnPJS-based)
+
+import { sp } from "@pnp/sp/presets/all";
+import { ITile } from "./ITile";
+
+export async function getTiles(listName: string): Promise<ITile[]> {
+  return sp.web.lists.getByTitle(listName).items.select('Id','Title','ImageUrl','Views','Likes','DetailsPageUrl','Comments').top(500).get();
+}
+
+export async function incrementView(listName: string, id: number): Promise<void> {
+  await sp.web.lists.getByTitle(listName).items.getById(id).validateUpdateListItem([{FieldName: 'Views', FieldValue: '1'}], 'true');
+  // NOTE: validateUpdateListItem with incremental logic depends; alternative: read -> update with IF-MATCH.
+}
+
+export async function updateLikes(listName: string, id: number, likes: number): Promise<void> {
+  await sp.web.lists.getByTitle(listName).items.getById(id).update({ Likes: likes });
+}
+
+> You can refine incrementView to use merge and IF-MATCH for concurrency.
+
+
+
+5.5 TileCard.tsx
+
+import * as React from 'react';
+import { ITile } from './ITile';
+
+interface Props {
+  tile: ITile;
+  onLike: (id:number) => void;
+  onOpen: (url?:string) => void;
+}
+
+const TileCard: React.FC<Props> = ({ tile, onLike, onOpen }) => {
+  return (
+    <div className="tile-card" role="article" aria-label={tile.Title}>
+      <img src={tile.ImageUrl} alt={tile.Title} style={{width:'100%'}}/>
+      <h4>{tile.Title}</h4>
+      <div>{tile.Views} views • {tile.Likes} likes</div>
+      <div>
+        <button onClick={() => onLike(tile.Id)}>Like</button>
+        <button onClick={() => onOpen(tile.DetailsPageUrl)}>Open</button>
+      </div>
+    </div>
+  );
+};
+
+export default TileCard;
+
+5.6 TileGallery.tsx (main component)
+
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { ITile } from './ITile';
+import TileCard from './TileCard';
+import { getTiles, updateLikes } from './TileService';
+
+const TileGallery: React.FC<any> = ({ title, listName }) => {
+  const [tiles, setTiles] = useState<ITile[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    getTiles(listName).then(res => {
+      if(mounted) { setTiles(res); setLoading(false); }
+    }).catch(e => { console.error(e); setLoading(false); });
+    return () => { mounted = false; };
+  }, [listName]);
+
+  const onLike = async (id:number) => {
+    // optimistic UI
+    setTiles(prev => prev.map(t => t.Id === id ? {...t, Likes: t.Likes + 1 } : t));
+    try {
+      const tile = tiles.find(t => t.Id === id);
+      await updateLikes(listName, id, (tile?.Likes || 0) + 1);
+    } catch(err) {
+      console.error(err);
+      // rollback
+      setTiles(prev => prev.map(t => t.Id === id ? {...t, Likes: t.Likes - 1 } : t));
+    }
+  };
+
+  const onOpen = (url?:string) => { if(url) window.open(url, '_blank'); };
+
+  if(loading) return <div>Loading...</div>;
+  return (
+    <div>
+      <h2>{title}</h2>
+      <div className="grid">
+        {tiles.map(t => <TileCard key={t.Id} tile={t} onLike={onLike} onOpen={onOpen} />)}
+      </div>
+    </div>
+  );
+};
+
+export default TileGallery;
+
+Styling: create TileGallery.module.scss and scope class names via CSS modules.
+
+
+---
+
+6. Property Pane to Configure List Name & Title
+
+Add to web part class:
+
+import { PropertyPaneTextField } from '@microsoft/sp-property-pane';
+
+protected getPropertyPaneConfiguration() {
+  return {
+    pages: [
+      {
+        header: { description: "Settings" },
+        groups: [
+          { groupFields: [
+              PropertyPaneTextField('title', { label: 'Web Part Title' }),
+              PropertyPaneTextField('listName', { label: 'Tiles List Name' })
+          ] }
+        ]
+      }
+    ]
+  };
+}
+
+
+---
+
+7. Advanced React + SPFx topics
+
+7.1 Lazy loading heavy modules
+
+const HeavyViewer = React.lazy(() => import('./HeavyViewer'));
+...
+<Suspense fallback={<div>Loading viewer...</div>}>
+  <HeavyViewer url={url} />
+</Suspense>
+
+7.2 Dynamic Data & WebPart-to-WebPart communication
+
+Implement provider via this.context.dynamicDataSourceManager.initialize(...) or use new dynamic data APIs so a filter webpart can provide a selected category consumed by TileGallery.
+
+7.3 Error boundary
+
+Add an ErrorBoundary class and wrap <TileGallery /> in it to catch render-time errors and show fallback UI.
+
+7.4 Authentication & APIs
+
+Use this.context.msGraphClientFactory for Graph.
+
+For custom APIs, use this.context.aadHttpClientFactory and declare permissions in package-solution.json (webApiPermissionRequests) — tenant admin must approve.
+
+
+
+---
+
+8. Unit testing React components inside SPFx
+
+Install Jest + React Testing Library:
+
+npm i -D jest @testing-library/react @types/jest ts-jest
+
+Example test TileCard.test.tsx:
+
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import TileCard from './TileCard';
+
+test('renders tile card', () => {
+  const tile = { Id:1, Title:'T1', ImageUrl:'img.jpg', Views:10, Likes:2 };
+  render(<TileCard tile={tile} onLike={()=>{}} onOpen={()=>{}} />);
+  expect(screen.getByText('T1')).toBeInTheDocument();
+});
+
+Run: npm test.
+
+
+---
+
+9. Bundle, Package & Deploy
+
+Production bundle & package:
+
+gulp bundle --ship
+gulp package-solution --ship
+
+Upload sharepoint/solution/<name>.sppkg to Tenant App Catalog (SharePoint Admin Center → More features → Apps → App Catalog). Optionally enable tenant-wide deployment.
+
+Add app to a site (Site Contents) → edit page → add web part.
+
+
+---
+
+10. CI/CD — GitHub Actions sample (build & upload artifact)
+
+.github/workflows/spfx-build.yml
+
+name: SPFx Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install
+        run: npm ci
+      - name: Build & Package
+        run: |
+          gulp bundle --ship
+          gulp package-solution --ship
+      - name: Upload SPPKG
+        uses: actions/upload-artifact@v4
+        with:
+          name: sppkg
+          path: sharepoint/solution/*.sppkg
+
+To auto-upload to AppCatalog use a step with PnP PowerShell + service principal secrets stored in GitHub Secrets — I can provide that full snippet if you want.
+
+
+---
+
+11. Performance & Security Checklist
+
+Performance
+
+Externalize React/Fluent UI if tenant provides them (reduce bundle).
+
+Leverage CDN for static assets.
+
+Use lazy loading for heavy viewers.
+
+Use memoization: React.memo, useMemo, useCallback.
+
+
+Security
+
+Don’t place secrets in client code.
+
+Use AAD-protected APIs and server-side function for secrets.
+
+Sanitize user content before rendering.
+
+Use HTTPS and trusted certs for local dev (gulp trust-dev-cert).
+
+
+
+---
+
+12. Best Practices / Conventions
+
+Keep web part class thin — move logic to React service modules.
+
+Type everything with TypeScript — avoid any.
+
+Use SCSS modules for scoped styles.
+
+Centralize API calls, error handling & retry logic.
+
+Add telemetry for production errors (via server endpoint or Application Insights).
+
+Version packages correctly (package-solution.json) before releasing.
+
+
+
+---
+
+13. Troubleshooting Common Errors
+
+Dev certificate: gulp trust-dev-cert (or revoke with gulp untrust-dev-cert).
+
+Manifest 404: ensure gulp serve is running and write-manifests.json uses https://localhost:4321.
+
+Node version errors: use nvm use 18.
+
+Graph permission denied: add scopes in package-solution.json and have admin approve.
+
+
+
+---
+
