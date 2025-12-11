@@ -449,8 +449,6 @@ You can also use community libraries (like PnPjs) to simplify REST/Graph calls �
 This layer ensures SPFx components can integrate with SharePoint data, Microsoft 365 services, or your own backend seamlessly.
 
 
----
-
 4. Packaging & Deployment Layer
 
 After development and build:
@@ -465,9 +463,6 @@ The same package can work across multiple hosts — SharePoint pages (classic & 
 
 
 This layered packaging/deployment approach ensures enterprise-ready deployment, governance, reuse, and maintainability.
-
-
----
 
 🔄 Full Flow: From Developer Code → User Browser
 
@@ -542,8 +537,6 @@ SPFx — Clear, part-by-part explanations with code
 Below are the core SPFx concepts split into digestible parts. Each part explains the idea, why it matters, and includes copy-pasteable code or commands. Pick any section to expand and I’ll add more files or a runnable repo.
 
 
----
-
 Part 1 — Environment setup (quick, exact steps)
 
 What & why: SPFx projects require Node, Yeoman generator, and Gulp. Use nvm to install the Node version compatible with your SPFx version (commonly Node 18.x for modern SPFx releases).
@@ -563,9 +556,6 @@ npm install -g @pnp/cli-microsoft365
 Trust dev certificate (first time only):
 
 gulp trust-dev-cert
-
-
----
 
 Part 2 — Scaffold a new SPFx project
 
@@ -707,15 +697,9 @@ console.log(data.value);
 PnPJS setup (recommended)
 
 1. Install:
-
-
-
 npm install @pnp/sp @pnp/common --save
 
 2. Setup in onInit() of web part:
-
-
-
 import { sp } from "@pnp/sp/presets/all";
 
 protected onInit(): Promise<void> {
@@ -725,13 +709,7 @@ protected onInit(): Promise<void> {
 }
 
 3. Use PnPJS in components:
-
-
-
 const items = await sp.web.lists.getByTitle('MyList').items.select('Id','Title').top(100).get();
-
-
----
 
 Part 6 — React patterns: hooks, async data, error boundaries
 
@@ -765,9 +743,6 @@ class ErrorBoundary extends React.Component<any, {hasError:boolean}> {
 }
 
 Wrap your root with <ErrorBoundary> to catch runtime errors.
-
-
----
 
 Part 7 — Application Customizer (extension) — inject header/footer
 
@@ -844,9 +819,6 @@ export default class MyCommandSet extends BaseListViewCommandSet<{}> {
 
 commandSet.manifest.json defines commands and their ids.
 
-
----
-
 Part 10 — Packaging & Deployment (commands + manifest notes)
 
 Build & package for production:
@@ -869,9 +841,6 @@ Deploy steps:
 
 Note: Ensure write-manifests.json or config.json points to correct CDN URLs for production assets (or host assets in the App Catalog).
 
-
----
-
 Part 11 — Calling AAD-protected API (AadHttpClient)
 
 What & why: Call custom back-end APIs protected by Azure AD using delegated auth.
@@ -889,10 +858,6 @@ Register AAD app for the API and configure scopes.
 In package-solution.json add required resource/scopes under webApiPermissionRequests.
 
 Tenant admin must approve the requested permissions.
-
-
-
----
 
 Part 12 — Localization (i18n)
 
@@ -963,9 +928,6 @@ Add test script to package.json:
 "scripts": { "test": "jest" }
 
 Run: npm test.
-
-
----
 
 Part 15 — CI/CD (GitHub Actions minimal workflow)
 
@@ -1076,29 +1038,15 @@ What: SharePoint Framework (SPFx) is a Microsoft-supported client-side developme
 Why it matters: Modern, supported, runs in browser under current user’s context (SSO/permissions), uses standard web toolchain (TypeScript, npm, Webpack), and replaces older server-side heavy patterns.
 Key guarantee: Don’t manipulate internal SharePoint DOM/CSS — use SPFx APIs.
 
-
----
-
 Part 2 — High-level Architecture (Layers & Flow)
 
 Layers:
 
 1. Dev/toolchain — Yeoman, Node, npm, TypeScript, Webpack/Gulp/Heft.
-
-
 2. Project artifacts — TypeScript/React code → compiled → bundles + manifest (.sppkg).
-
-
 3. Deployment — Upload .sppkg to SharePoint App Catalog (tenant/site); assets hosted in SharePoint or CDN.
-
-
 4. Runtime — Browser loads bundle, SPFx runtime provides context (pageContext, http clients), component renders into DOM.
 Flow: Scaffold → dev (gulp serve) → bundle (--ship) → package → upload → add to page → runtime execution.
-
-
-
-
----
 
 Part 3 — Toolchain & Environment Setup (exact steps)
 
@@ -1122,9 +1070,6 @@ First time dev cert:
 gulp trust-dev-cert
 
 Validate: node -v, npm -v, yo --version.
-
-
----
 
 Part 4 — Scaffold a Project
 
@@ -1151,10 +1096,6 @@ package-solution.json — solution metadata (version, features, webApiPermission
 loc/ — localization files.
 
 gulpfile.js, tsconfig.json, package.json.
-
-
-
----
 
 Part 6 — Hello World Web Part (full minimal example)
 
@@ -1191,9 +1132,6 @@ const Hello: React.FC<IHelloProps> = ({description, context}) => (
 );
 export default Hello;
 
-
----
-
 Part 7 — React Patterns in SPFx
 
 Use functional components + hooks (useState, useEffect).
@@ -1213,9 +1151,6 @@ useEffect(() => {
   return () => { mounted=false; };
 }, [listName]);
 
-
----
-
 Part 8 — Property Pane (authoring UI)
 
 Implement getPropertyPaneConfiguration() in web part:
@@ -1228,9 +1163,6 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 }
 
 Use this.properties to pass values into React props.
-
-
----
 
 Part 9 — SPFx Extensions (detailed)
 
@@ -1257,10 +1189,6 @@ Override rendering for a list column in view. Implement onRenderCell & onDispose
 ListView Command Set
 
 Add toolbar/context menu commands. Implement onExecute(event) to handle actions.
-
-
-
----
 
 Part 10 — Data Access: spHttpClient, msGraphClient, AadHttpClient, PnPJS
 
@@ -1290,28 +1218,17 @@ Usage:
 
 const items = await sp.web.lists.getByTitle('MyList').items.select('Id','Title').get();
 
-
----
-
 Part 11 — Dynamic Data (web parts talking to each other)
 
 Implement provider (exposes property definitions/values) via getPropertyDefinitions() / getPropertyValue().
 
 Consumers register to a dynamic data source and react to changes. Useful for filters, context providers.
 
-
-
----
-
 Part 12 — Localization (i18n)
 
 Use loc folder files (en-us.js, fr-fr.js) and strings.<key> imports.
 
 Avoid hardcoding labels/strings — always use resource files for user-facing text.
-
-
-
----
 
 Part 13 — Asset Management & Bundling
 
@@ -1320,10 +1237,6 @@ Use config/config.json to mark externals. Heavy libs (React, Fluent UI) can be e
 write-manifests.json determines debug URLs. For production, set cdnBasePath to your CDN/App Catalog CDN.
 
 Use lazy/dynamic import() for heavy modules.
-
-
-
----
 
 Part 14 — Packaging & Deployment
 
@@ -1334,9 +1247,6 @@ gulp package-solution --ship
 
 Upload sharepoint/solution/<pkg>.sppkg to App Catalog. Optionally enable tenant-wide deployment. Then add app to site (Site Contents) and place web part.
 
-
----
-
 Part 15 — Permissions & Security
 
 For Graph/custom API scopes: add webApiPermissionRequests in package-solution.json and request tenant admin consent.
@@ -1344,10 +1254,6 @@ For Graph/custom API scopes: add webApiPermissionRequests in package-solution.js
 Never embed secrets in client code. Use server components (Azure Functions) or AAD-secured APIs.
 
 SPFx runs under current user; use proper permission checks on server side when sensitive operations are needed.
-
-
-
----
 
 Part 16 — Performance Optimization
 
@@ -1360,10 +1266,6 @@ Cache API responses (sessionStorage/indexedDB) where appropriate.
 Avoid frequent re-renders: memoize components, use useCallback/useMemo.
 
 Analyze bundle with gulp bundle --ship then inspect temp output.
-
-
-
----
 
 Part 17 — Testing
 
@@ -1381,36 +1283,17 @@ test('shows description', ()=> {
   expect(getByText(/abc/)).toBeTruthy();
 });
 
-
----
-
 Part 18 — CI/CD (GitHub Actions / Azure DevOps)
 
 Minimal pipeline steps:
 
 1. Checkout
-
-
 2. Setup Node (version)
-
-
 3. npm ci
-
-
 4. gulp bundle --ship
-
-
 5. gulp package-solution --ship
-
-
 6. Upload .sppkg artifact or use PnP PowerShell to upload to App Catalog using service principal (use secrets).
-
-
-
 Example artifact upload step is in the earlier cheat-sheet; for automated App Catalog upload use PnP PowerShell and a service principal (secure secrets).
-
-
----
 
 Part 19 — Debugging & Troubleshooting
 
@@ -1424,19 +1307,11 @@ Large bundles: check externals and duplicate packages (npm ls react).
 
 Graph errors: check webApiPermissionRequests + tenant admin consent.
 
-
-
----
-
 Part 20 — Application Insights & Telemetry
 
 For client telemetry, send anonymised events to a backend or use Application Insights server-side proxy. Don’t log PII.
 
 Log errors with contextual properties (web part id, site id, user id hashed) to assist postmortem.
-
-
-
----
 
 Part 21 — Governance & Best Practices
 
@@ -1450,9 +1325,6 @@ Follow TypeScript strict settings; enforce linting and code reviews.
 
 Document feature flags and rollout strategy for tenant-wide deployment.
 
-
-
----
 
 Part 22 — Common Interview Questions (high-value)
 
@@ -1470,10 +1342,6 @@ How to reduce bundle size? — externals, CDN, code splitting, lazy loading.
 
 How to debug in SharePoint workbench? — run gulp serve, ensure dev cert trusted, use ?loadSPFX=true.
 
-
-
----
-
 Part 23 — Real Project Patterns (practical tips)
 
 Tile gallery (media + counters): store metadata in list; optimistic UI for likes; use merge updates with IF-MATCH to avoid conflicts.
@@ -1483,53 +1351,25 @@ Dashboard: use DetailsList, CommandBar, PnPJS filters, and server-side paging fo
 Document viewer: fetch file from Graph and render with PDF.js; check permissions via Graph.
 
 
-
----
-
-
 Below is a complete, beginner-to-advanced React Framework guide, including concepts, examples, and clear explanations.
 If you want this specifically for SPFx + React, tell me and I will customize it.
-
-
----
-
-🚀 React Framework — Complete Guide (Beginner → Advanced)
-
-Every concept explained clearly + sample code.
-
-
----
 
 📘 PART 1 — Introduction to React
 
 What is React?
 
 React is a JavaScript library for building UI components using:
-
 Components
-
 State
-
 Props
-
 Virtual DOM
-
 Declarative rendering
 
-
 Why React?
-
 Fast UI updates
-
 Reusable components
-
 Works with APIs easily
-
 Perfect for SPFx, web apps, dashboards, chatbots
-
-
-
----
 
 📘 PART 2 — React Project Structure
 
@@ -1543,39 +1383,20 @@ src
  ├── App.js
  ├── index.js
 
-
----
-
 📘 PART 3 — JSX (JavaScript XML)
-
 JSX allows HTML inside JavaScript.
-
 Example:
-
 function Hello() {
   return <h1>Hello React</h1>;
 }
 
-
----
-
 📘 PART 4 — Components
-
 React uses two component types:
-
-
----
-
 1️⃣ Functional Components (Recommended)
-
 function Greeting() {
   return <h2>Welcome!</h2>;
 }
 export default Greeting;
-
-
----
-
 2️⃣ Props (Component Inputs)
 
 function Welcome(props) {
@@ -1583,9 +1404,6 @@ function Welcome(props) {
 }
 
 <Welcome name="Rajasri" />
-
-
----
 
 3️⃣ State (Component Memory)
 
@@ -1603,9 +1421,6 @@ function Counter() {
     </>
   );
 }
-
-
----
 
 📘 PART 5 — React Hooks (Very Important)
 
@@ -1641,22 +1456,13 @@ function Users() {
   return <div>{JSON.stringify(users)}</div>;
 }
 
-
----
-
 3️⃣ useContext (Global State)
 
 Used like a mini Redux.
 
-
----
-
 4️⃣ useReducer (Advanced State Management)
 
 For complex logic.
-
-
----
 
 5️⃣ useRef (DOM Access + Persistent Values)
 
@@ -1665,15 +1471,9 @@ Example:
 const inputRef = useRef();
 <input ref={inputRef} />
 
-
----
-
 📘 PART 6 — Conditional Rendering
 
 {isLoggedIn ? <Dashboard /> : <Login />}
-
-
----
 
 📘 PART 7 — Lists & Keys
 
@@ -1683,9 +1483,6 @@ const items = ["A", "B", "C"];
   {items.map((item, idx) => <li key={idx}>{item}</li>)}
 </ul>
 
-
----
-
 📘 PART 8 — Forms Handling
 
 const [name, setName] = useState("");
@@ -1693,9 +1490,6 @@ const [name, setName] = useState("");
 <form>
   <input value={name} onChange={(e) => setName(e.target.value)} />
 </form>
-
-
----
 
 📘 PART 9 — API Integration
 
@@ -1705,16 +1499,10 @@ fetch("/api/users")
   .then(res => res.json())
   .then(data => setUsers(data));
 
-
----
-
 Using Axios
 
 import axios from "axios";
 axios.get("/api/users").then(res => setUsers(res.data));
-
-
----
 
 📘 PART 10 — Routing (react-router-dom)
 
@@ -1731,9 +1519,6 @@ Example:
   </Routes>
 </BrowserRouter>
 
-
----
-
 📘 PART 11 — State Management (Redux / Context)
 
 Context API (Simplest)
@@ -1744,9 +1529,6 @@ const UserContext = createContext();
   <App />
 </UserContext.Provider>
 
-
----
-
 📘 PART 12 — Reusable Components
 
 Button Component Example:
@@ -1756,9 +1538,6 @@ const Button = ({ text, onClick }) => (
 );
 
 <Button text="Save" onClick={() => alert("Saved")} />
-
-
----
 
 📘 PART 13 — Custom Hooks
 
@@ -1774,26 +1553,13 @@ function useUsers() {
   return users;
 }
 
-
----
-
 📘 PART 14 — Performance Optimization
-
 React.memo()
-
 useMemo()
-
 useCallback()
-
 Lazy loading
-
-
 Example:
-
 const result = useMemo(() => heavyCalculation(), [input]);
-
-
----
 
 📘 PART 15 — Error Boundaries
 
@@ -1802,9 +1568,6 @@ class ErrorBoundary extends React.Component {
   componentDidCatch() { this.setState({ hasError: true }); }
   render() { return this.state.hasError ? "Error!" : this.props.children; }
 }
-
-
----
 
 📘 PART 16 — Styling
 
@@ -1819,40 +1582,23 @@ const Blue = styled.button`
   background: blue;
 `;
 
-
----
-
 📘 PART 17 — Advanced React
 
 Suspense
-
 Concurrent Rendering
-
 Portals
-
 Fragments
-
 Higher Order Components
-
 Pure Components
 
-
-
----
-
 📘 PART 18 — React in SPFx
-
 SPFx uses React heavily.
-
 SPFx WebPart → React Component
 
 const element = React.createElement(MyComponent, {
   context: this.context,
   title: this.properties.title
 });
-
-
----
 
 📘 PART 19 — Real-Time Examples You Can Build
 
@@ -1866,17 +1612,11 @@ I can generate full code for any:
 ✔ Adverse Event Reporting UI
 ✔ SharePoint List CRUD
 
-
----
-
 📘 PART 20 — Interview-Level React Questions
 
 Difference between state and props
-
 Virtual DOM
-
 Keys in lists
-
 useState vs useReducer
 
 Why React is fast
@@ -1885,17 +1625,8 @@ Class vs Functional Components
 
 Lifecycle methods vs useEffect
 
-
-
----
-
-
-Great — here’s a complete, hands-on React + SPFx combined tutorial you can use to build real, production-ready SharePoint web parts that use React. It’s organized as a step-by-step course: environment → scaffold → code patterns → example project (Tile Gallery) → testing → build & CI/CD → deployment & best practices. Each section includes copy-pasteable files and commands so you can run it immediately.
-
 React + SPFx Combined Tutorial — Full Walkthrough
 
-
----
 
 0. Quick prerequisites (one-liners)
 
@@ -1913,14 +1644,9 @@ Optional: PnP CLI / PnP PowerShell for automation:
 
 npm i -g @pnp/cli-microsoft365
 
-
----
-
 1. Project Setup & Scaffolding
 
 1. Create a folder and scaffold:
-
-
 
 mkdir spfx-react-tile && cd spfx-react-tile
 yo @microsoft/sharepoint
@@ -1939,24 +1665,15 @@ Deploy: No (you’ll package later)
 
 
 2. Install dependencies (if generator didn’t):
-
-
-
 npm install
 gulp trust-dev-cert
 
 3. Run local workbench:
 
-
-
 gulp serve
 # open https://localhost:4321/temp/workbench.html
 
-
----
-
 2. Project Structure (what matters)
-
 spfx-react-tile/
 ├─ src/
 │  ├─ webparts/
@@ -1972,9 +1689,6 @@ spfx-react-tile/
 │  └─ solution/*.sppkg
 ├─ package.json
 └─ tsconfig.json
-
-
----
 
 3. SPFx WebPart → React integration (core pattern)
 
@@ -2017,47 +1731,25 @@ export default class TileGalleryWebPart extends BaseClientSideWebPart<ITileGalle
 
 Why this pattern: The web part stays thin — it provides context and config; React components hold UI & state.
 
-
----
-
 4. Core React patterns for SPFx
-
 Use these conventions:
-
 Functional components + hooks (useState, useEffect) — concise and testable.
-
 Service module for data access (separate file TileService.ts) that uses PnPJS or spHttpClient.
-
 Prop typing via interfaces (ITileGalleryProps, ITile).
-
 ErrorBoundary wrapper for React rendering errors.
-
 Lazy load detailed views using React.lazy + Suspense for heavy modules (PDF viewer etc).
-
 Optimistic UI for likes or counters: update UI first, then persist; rollback on error.
-
-
-
----
 
 5. Example: Tile Gallery — full minimal files
 
 5.1 Data model (SharePoint list schema)
-
 Create a SharePoint list Tiles with fields:
-
 Title (single line)
-
 ImageUrl (single line)
-
 Views (Number)
-
 Likes (Number)
-
 DetailsPageUrl (single line / URL)
-
 Comments (Multiple lines)
-
 
 5.2 ITile.ts
 
@@ -2101,8 +1793,6 @@ export async function updateLikes(listName: string, id: number, likes: number): 
 }
 
 > You can refine incrementView to use merge and IF-MATCH for concurrency.
-
-
 
 5.5 TileCard.tsx
 
@@ -2181,9 +1871,6 @@ export default TileGallery;
 
 Styling: create TileGallery.module.scss and scope class names via CSS modules.
 
-
----
-
 6. Property Pane to Configure List Name & Title
 
 Add to web part class:
@@ -2206,9 +1893,6 @@ protected getPropertyPaneConfiguration() {
   };
 }
 
-
----
-
 7. Advanced React + SPFx topics
 
 7.1 Lazy loading heavy modules
@@ -2220,22 +1904,14 @@ const HeavyViewer = React.lazy(() => import('./HeavyViewer'));
 </Suspense>
 
 7.2 Dynamic Data & WebPart-to-WebPart communication
-
 Implement provider via this.context.dynamicDataSourceManager.initialize(...) or use new dynamic data APIs so a filter webpart can provide a selected category consumed by TileGallery.
 
 7.3 Error boundary
-
 Add an ErrorBoundary class and wrap <TileGallery /> in it to catch render-time errors and show fallback UI.
 
 7.4 Authentication & APIs
-
 Use this.context.msGraphClientFactory for Graph.
-
 For custom APIs, use this.context.aadHttpClientFactory and declare permissions in package-solution.json (webApiPermissionRequests) — tenant admin must approve.
-
-
-
----
 
 8. Unit testing React components inside SPFx
 
@@ -2257,22 +1933,14 @@ test('renders tile card', () => {
 
 Run: npm test.
 
-
----
-
 9. Bundle, Package & Deploy
 
 Production bundle & package:
-
 gulp bundle --ship
 gulp package-solution --ship
 
 Upload sharepoint/solution/<name>.sppkg to Tenant App Catalog (SharePoint Admin Center → More features → Apps → App Catalog). Optionally enable tenant-wide deployment.
-
 Add app to a site (Site Contents) → edit page → add web part.
-
-
----
 
 10. CI/CD — GitHub Actions sample (build & upload artifact)
 
@@ -2303,65 +1971,30 @@ jobs:
 
 To auto-upload to AppCatalog use a step with PnP PowerShell + service principal secrets stored in GitHub Secrets — I can provide that full snippet if you want.
 
-
----
-
 11. Performance & Security Checklist
 
 Performance
-
 Externalize React/Fluent UI if tenant provides them (reduce bundle).
-
 Leverage CDN for static assets.
-
 Use lazy loading for heavy viewers.
-
 Use memoization: React.memo, useMemo, useCallback.
 
-
 Security
-
 Don’t place secrets in client code.
-
 Use AAD-protected APIs and server-side function for secrets.
-
 Sanitize user content before rendering.
-
 Use HTTPS and trusted certs for local dev (gulp trust-dev-cert).
 
-
-
----
-
 12. Best Practices / Conventions
-
 Keep web part class thin — move logic to React service modules.
-
 Type everything with TypeScript — avoid any.
-
 Use SCSS modules for scoped styles.
-
 Centralize API calls, error handling & retry logic.
-
 Add telemetry for production errors (via server endpoint or Application Insights).
-
 Version packages correctly (package-solution.json) before releasing.
 
-
-
----
-
 13. Troubleshooting Common Errors
-
 Dev certificate: gulp trust-dev-cert (or revoke with gulp untrust-dev-cert).
-
 Manifest 404: ensure gulp serve is running and write-manifests.json uses https://localhost:4321.
-
 Node version errors: use nvm use 18.
-
 Graph permission denied: add scopes in package-solution.json and have admin approve.
-
-
-
----
-
